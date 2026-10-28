@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waqf Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B2C; --navy:#13294B; --navy2:#1E3A64; --teal:#0F766E; --teal-l:#E3F1EF;
+  --gold:#B8892B; --gold-l:#F5ECD9; --sand:#FAF7F0; --paper:#FFFFFF; --line:#E4DDCC;
+  --muted:#5B6676; --red:#B42318; --red-l:#FBE9E7; --green:#157F3D; --green-l:#E6F4EA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#1b2433;font-family:Inter,system-ui,sans-serif;color:var(--ink);overflow:hidden}
+#stage{position:absolute;left:50%;top:calc(50% - 22px);width:1280px;height:720px;transform-origin:center center;margin-left:-640px;margin-top:-360px}
+.slide{position:absolute;inset:0;background:var(--sand);display:none;flex-direction:column;padding:38px 56px 0 56px;overflow:hidden;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.slide.active{display:flex}
+.slide::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;opacity:.06;background:
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%2313294B' stroke-width='1.2'%3E%3Crect x='20' y='20' width='60' height='60'/%3E%3Crect x='20' y='20' width='60' height='60' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='18'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.sh{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+.kicker{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--navy);font-weight:600}
+h2{font-size:34px;line-height:1.12;max-width:1100px}
+h2 em{font-style:normal;color:var(--gold)}
+.big{font-family:Fraunces,serif;font-size:30px;font-weight:700;color:var(--navy);line-height:1}
+.big small{font-size:13px;color:var(--muted);font-family:Inter,sans-serif;font-weight:600}
+.lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-top:9px}
+h3{font-size:16px;margin-bottom:6px}
+.lead{font-size:14px;color:var(--muted);max-width:1080px;line-height:1.45}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;font-size:12.5px;line-height:1.45}
+.sf{height:34px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);font-size:10.5px;color:var(--muted);margin-top:8px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.card.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.navy h3{color:#fff}
+.card.teal{background:var(--teal-l);border-color:#bfe0db}
+.card.gold{background:var(--gold-l);border-color:#e8d6ae}
+.card.red{background:var(--red-l);border-color:#f2c6bf}
+.card.green{background:var(--green-l);border-color:#bfe3c9}
+ul.b{padding-left:16px}ul.b li{margin:3px 0}
+.kpi{font-family:Fraunces,serif;font-size:27px;margin:6px 0 4px;color:var(--navy);font-weight:700;line-height:1.1}
+.card.navy .kpi{color:#fff}
+.kpl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.card.navy .kpl{color:#c8d3e6}
+table{border-collapse:collapse;width:100%;font-size:11.4px;background:var(--paper)}
+th{background:var(--navy);color:#fff;text-align:left;font-weight:600;padding:6px 8px;font-size:11px}
+td{padding:4px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.hl td{background:var(--gold-l);font-weight:600}
+tr.tot td{background:var(--navy);color:#fff;font-weight:700}
+td.n,th.n{text-align:right;white-space:nowrap}
+.ref{font-size:9px;vertical-align:super;color:var(--teal);font-weight:700;cursor:pointer;margin-left:1px}
+.ref::before{content:"["}.ref::after{content:"]"}
+.tag{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:20px;background:var(--gold-l);color:#7a5a17;margin-left:4px;vertical-align:1px}
+.tag.est{background:#EEF1F5;color:#4a5566}
+.tag.ok{background:var(--green-l);color:var(--green)}
+.tag.ko{background:var(--red-l);color:var(--red)}
+.note{font-size:10.5px;color:var(--muted)}
+.ph{position:relative;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#d9e2ee,#eef2f7);height:118px}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.noimg img{display:none}
+.ph.noimg::after{content:"Photo indisponible : voir l'annonce";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted)}
+.ph .cap{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:9.5px;padding:10px 8px 4px}
+.pill{display:inline-block;background:var(--navy);color:#fff;border-radius:20px;padding:2px 9px;font-size:10.5px;font-weight:600;margin:0 4px 4px 0}
+.pill.t{background:var(--teal)}.pill.g{background:var(--gold)}
+.flex{display:flex;gap:14px}.col{display:flex;flex-direction:column;gap:10px}
+.cover{background:var(--navy);color:#fff;padding:0;flex-direction:row}
+.cover .l{flex:1.15;padding:64px 56px;display:flex;flex-direction:column;justify-content:space-between}
+.cover .r{flex:.85;position:relative;background:#0b1830}
+.cover .r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.cover .rf{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:26px;padding:56px 48px;background:radial-gradient(circle at 80% 20%,#1E3A64,#0b1830 70%)}
+.cover .rf div{border-left:3px solid #e5c37a;padding-left:16px}
+.cover .rf b{display:block;font-family:Fraunces,serif;font-size:44px;color:#e5c37a;line-height:1}
+.cover .rf span{color:#c8d3e6;font-size:14px}
+.cover h1{color:#fff;font-size:42px;line-height:1.1;margin:14px 0 18px}
+.cover .kicker{color:#e5c37a}
+.cover p{color:#c8d3e6;font-size:15px;line-height:1.5;max-width:560px}
+.bar{height:12px;border-radius:3px;background:var(--navy)}
+.bars .row{display:grid;grid-template-columns:200px 1fr 70px;align-items:center;gap:10px;margin:5px 0;font-size:11.5px}
+.bars .row .v{font-weight:700;text-align:right}
+.gantt{display:grid;grid-template-columns:230px repeat(12,1fr);font-size:10.5px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.gantt .h{background:var(--navy);color:#fff;font-weight:600;padding:5px 4px;text-align:center}
+.gantt .h:first-child{text-align:left;padding-left:8px}
+.gantt .lab{padding:1px 8px;line-height:16px;border-bottom:1px solid #eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gantt .grp{grid-column:1/-1;background:var(--gold-l);font-weight:700;padding:1px 8px;color:#7a5a17;font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+.gantt .cell{border-bottom:1px solid #eee;border-left:1px dashed #eee;position:relative;height:18px}
+.gantt .gb{position:relative;height:18px;border-bottom:1px solid #eee;display:flex;align-items:center}
+.gantt .gb span{display:block;height:12px;border-radius:3px;background:var(--teal);width:100%;margin:0 2px}
+.gantt .gb.f span{background:var(--gold)}.gantt .gb.c span{background:var(--red)}.gantt .gb.n span{background:var(--navy)}
+.gantt .ms{display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eee;height:18px;color:var(--red);font-weight:800}
+.plan{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(6,1fr);gap:4px;height:300px}
+.plan div{border-radius:6px;padding:6px;font-size:10.5px;font-weight:600;color:var(--navy);border:1px solid rgba(19,41,75,.15);display:flex;flex-direction:column;justify-content:space-between}
+.plan small{font-weight:500;color:var(--muted);font-size:9.5px}
+.diagram{display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:center;gap:0}
+.arrow{text-align:center;color:var(--gold);font-size:11px;font-weight:700}
+.arrow b{display:block;font-size:22px;line-height:1}
+.tk{display:flex;align-items:center;gap:10px;margin-top:9px;padding:7px 14px 7px 10px;border-radius:8px;font-size:14.5px;font-weight:600;line-height:1.3;background:var(--green-l);color:#0d5c2c;border-left:5px solid var(--green);max-width:1168px}
+.tk::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.tk.g{background:var(--gold-l);color:#6b4d10;border-left-color:var(--gold)}.tk.g::before{content:"€";background:var(--gold)}
+.tk.n{background:#E8EDF5;color:var(--navy);border-left-color:var(--navy)}.tk.n::before{content:"→";background:var(--navy)}
+.tk.r{background:var(--red-l);color:#8a1c12;border-left-color:var(--red)}.tk.r::before{content:"!";background:var(--red)}
+.proof{background:var(--green-l);border:1px solid #bfe3c9;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.proof.n{background:var(--paper);border-color:var(--line)}
+.proof .pn{font-family:Fraunces,serif;font-size:34px;font-weight:700;color:var(--green);line-height:1}
+.proof.n .pn{color:var(--navy)}
+.proof .pt{font-size:12.5px;line-height:1.4;color:var(--ink)}
+.fx{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;margin:12px 0}
+.fxl b{display:block;font-size:14px;color:var(--navy)}.fxl small{font-size:11px;color:var(--muted)}
+.fxb{display:flex;height:40px;border-radius:8px;overflow:hidden;font-size:11.5px;font-weight:700;color:#fff}
+.fxb span{display:flex;align-items:center;padding:0 10px;white-space:nowrap;overflow:hidden}
+.fxb .c{background:var(--navy)}.fxb .s{background:var(--gold)}.fxb .l{background:#8a96a8}
+.sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(229,195,122,.55);color:#fff;border-radius:22px;padding:6px 13px;font-size:13px;font-weight:600}
+.badge b{color:#e5c37a}
+/*legend*/.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-2px;margin-right:4px}
+.who{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;color:#fff;align-self:flex-start;line-height:1.4;vertical-align:1px}
+.who.us{background:var(--gold)}.who.mk{background:var(--teal)}.who.law{background:var(--navy)}.who.cp{background:#8a96a8}.who.pr{background:var(--green)}
+.card.navy .who.law{background:#2c4a78}
+.legend .who{margin-right:3px}
+#ui{position:fixed;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;justify-content:center;gap:10px;color:#c8d3e6;font-size:12px}
+#ui button{background:#2a3850;border:1px solid #3b4c68;color:#fff;border-radius:6px;padding:6px 12px;font:600 12px Inter,sans-serif;cursor:pointer}
+#ui button:hover{background:#34476a}
+#prog{position:fixed;left:0;top:0;height:3px;background:var(--gold);transition:width .2s}
+body.read{overflow:auto}
+body.read #stage{position:static;transform:none!important;margin:24px auto;width:1280px;height:auto}
+body.read .slide{display:flex;position:relative;height:720px;margin-bottom:24px}
+body.read #ui{background:#1b2433}
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:#fff;overflow:visible}
+  #ui,#prog{display:none}
+  #stage{position:static;transform:none!important;margin:0;width:1280px;height:auto}
+  .slide{display:flex!important;position:relative;height:720px;page-break-after:always;break-after:page;box-shadow:none;border-radius:0}
+}
+</style>
+
+<style>
+:root{--ach:#00897B;--ach-l:#E0F2EF;--loc:#B8892B}
+.sw.a{background:var(--ach)}.sw.l{background:var(--loc)}
+.pin{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;flex:none}
+.pin.a{background:var(--ach)}.pin.l{background:var(--loc)}
+.pro li::marker{content:"＋ ";color:var(--green);font-weight:800}
+.con li::marker{content:"－ ";color:var(--red);font-weight:800}
+.pro,.con{padding-left:20px}.pro li,.con li{margin:4px 0}
+.vs td:first-child{font-weight:600;color:var(--navy);width:210px}
+.win{color:var(--green);font-weight:700}
+.big2{font-family:Fraunces,serif;font-size:40px;font-weight:700;line-height:1;color:var(--navy)}
+.card.ach{background:var(--ach-l);border-color:#b3ddd6}
+.src{font-size:9.5px;font-weight:700;color:var(--teal);text-decoration:none;vertical-align:super;margin-left:2px}
+.src:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div id="stage">
+<!-- 1 LE PROJET -->
+<section class="slide cover">
+  <div class="l">
+    <div>
+      <div class="kicker">Projet « Waqf Campus » (nom de travail) · extension du local de Massy · premier site : Tolbiac</div>
+      <h1>100 m² à Tolbiac pour prier, étudier et se retrouver</h1>
+      <p>Un local loué d'au moins 100 m² près de l'université Paris 1 à Tolbiac (Paris 13e), extension du local que le porteur détient déjà à Massy via sa SCI. 200 clients abonnés chaque mois. Une salle d'étude, une salle de groupe, un espace de recueillement avec ablutions et un espace détente (babyfoot, poufs, mini-bibliothèque). Ouvert de 8h à 22h, un seul salarié, accès par badge le reste du temps. Financé uniquement par les clients et par la levée du gala ; juridique et travaux assurés par des bénévoles professionnels.</p>
+      <div class="badges"><span class="badge"><b>≈ 53 k€</b> à lever au gala</span><span class="badge"><b>200 clients</b> à 29 €/mois</span><span class="badge">Ouverture en <b>février 2027</b></span></div>
+    </div>
+    <div style="font-size:12px;color:#c8d3e6;line-height:1.6">
+      Gala le 28 novembre 2026 · bail en décembre · travaux en janvier · ouverture en février 2027<br>
+      Annonces relevées le 28 octobre 2026 · estimations à confirmer par devis<br>
+      Document confidentiel, à valider par les juristes bénévoles, un expert-comptable et un comité charia
+    </div>
+  </div>
+  <div class="r"><div class="rf">
+    <div><b>5,6 k€</b><span>de charges par mois, tout compris : loyer, salarié, fonctionnement</span></div>
+    <div><b>8,1 k€</b><span>de recettes des clients par mois</span></div>
+    <div><b>+2,5 k€</b><span>de bénéfice par mois dès juillet 2027, sans aucun don</span></div>
+    <div><b>27 mois</b><span>pour financer un 2e lieu avec les seuls bénéfices</span></div>
+  </div></div>
+</section>
+
+<!-- 2 LE LOCAL -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Le local</span>
+  <h2>Corvisart, 105 m² <em>déjà aux normes</em>, à 15 minutes de Tolbiac</h2>
+  <p class="lead">Annonces en ligne au 28/10/2026, loyers hors taxes et hors charges. Corvisart sert de base à tous les chiffres.</p></div>
+  <div class="body">
+    <table>
+      <tr><th>Local</th><th class="n">Surface</th><th class="n">Loyer HT/mois</th><th>Tolbiac</th><th>Atouts</th><th>Vigilance</th></tr>
+      <tr class="hl"><td><b>Corvisart, place d'Italie</b> · référence <a class="src" href="https://www.bureauxlocaux.com/annonce/location-bureau-paris-75013--42993125" target="_blank" rel="noopener">annonce</a></td><td class="n">105 m², rez-de-chaussée</td><td class="n">3 002 €</td><td>≈ 15 min à pied</td><td><b>ERP 5 et PMR</b>, accès sur rue, 2 WC, kitchenette</td><td>Charges et taxe foncière non publiées</td></tr>
+      <tr><td><b>Place de Rungis</b>, Butte-aux-Cailles <a class="src" href="https://www.bureauxlocaux.com/annonce/location-pure-11585-m2-75013-paris--42314961" target="_blank" rel="noopener">annonce</a></td><td class="n">46 + 69 m² (sous-sol)</td><td class="n">2 500 €</td><td>métro Tolbiac</td><td>≈ 950 €/mois de charges en moins</td><td>Surtout en sous-sol ; ERP non précisé</td></tr>
+      <tr><td><b>44 rue Poliveau</b>, Censier <a class="src" href="https://www.bureauxlocaux.com/annonce/local-commercial-paris-5eme--39493025" target="_blank" rel="noopener">annonce</a></td><td class="n">130 m²</td><td class="n">3 417 €</td><td>≈ 20 min à pied</td><td>Eau sur place, WC PMR, climatisé</td><td>Plus cher ; plus près de Jussieu et de la Pitié</td></tr>
+    </table>
+    <div class="grid" style="grid-template-columns:1.1fr 1fr;gap:20px">
+      <div class="plan" style="height:230px">
+        <div style="grid-column:1/7;grid-row:1/5;background:#E8EDF5">Salle d'étude<small>36 m² · 24 places</small></div>
+        <div style="grid-column:7/10;grid-row:1/4;background:var(--ach-l)">Recueillement<small>20 m² · 15-18 pers.</small></div>
+        <div style="grid-column:10/13;grid-row:1/4;background:#FBE3D3">Espace détente<small>15 m² · babyfoot, poufs, livres</small></div>
+        <div style="grid-column:7/10;grid-row:4/5;background:#DCEFF7">Ablutions<small>5 m²</small></div>
+        <div style="grid-column:10/13;grid-row:4/5;background:#fff">Accueil, café<small>8 m²</small></div>
+        <div style="grid-column:1/7;grid-row:5/7;background:var(--gold-l)">Salle de groupe<small>14 m² · 8 places</small></div>
+        <div style="grid-column:7/13;grid-row:5/7;background:#f1f1f1">WC (dont PMR), circulations<small>12 m²</small></div>
+      </div>
+      <div class="col">
+        <div class="card"><h3>Pourquoi Tolbiac</h3>Le centre Pierre-Mendès-France de Paris 1 compte environ 10 000 inscrits et 6 000 présents par jour (Reuters, 2018, à actualiser). 200 clients = 2 % des inscrits.</div>
+        <div class="card"><h3>Pourquoi un espace détente</h3>Babyfoot, poufs et mini-bibliothèque : on vient étudier, on revient pour l'ambiance. C'est ce qui transforme 200 passages en 200 abonnés.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Waqf Campus · Tolbiac · 28/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 3 MONTAGE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">L'équipe, le montage avec Massy, les avantages fiscaux</span>
+  <h2>Une association pour les deux lieux, <em>un seul salarié</em>, la SCI garde les murs</h2>
+  <p class="lead">Le salarié (CDI 35 h au SMIC, ≈ 2 000 €/mois) gère tout : accueil, abonnements, ménage, réservations. Les abonnés entrent avec un badge le reste des 98 heures d'ouverture. Avocats, juristes et professionnels du BTP bénévoles assurent le juridique et les travaux.</p></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1fr 1.45fr;gap:20px">
+      <div class="col">
+        <table>
+          <tr><th>Structure</th><th>Rôle</th></tr>
+          <tr><td><b>SCI du porteur</b></td><td>Propriétaire du local de Massy ; le loue ou le prête à l'association. Ne peut pas délivrer de reçu fiscal.</td></tr>
+          <tr class="hl"><td><b>Association loi 1901</b></td><td>Exploite Massy et Tolbiac (établissement secondaire), signe le bail, emploie le salarié, reçoit les dons du gala.</td></tr>
+          <tr><td><b>Salarié</b></td><td>Employé par l'association, ou employé à Massy et mis à disposition de Tolbiac au prix coûtant.</td></tr>
+        </table>
+        <div class="card red"><h3>Le point à sécuriser</h3>Les recettes (≈ 97 k€ par an) dépassent la franchise des impôts commerciaux (≈ 80 k€, à vérifier) si elles sont jugées lucratives : impôt sur les sociétés et TVA. Parades : tarifs sociaux étudiants, gestion désintéressée, rescrit préparé par les juristes bénévoles. Le régime de la SCI (IR ou IS) ne change rien aux comptes de Tolbiac.</div>
+      </div>
+      <table>
+        <tr><th>Avantage fiscal</th><th>Gain</th><th>Condition</th></tr>
+        <tr><td>Dons du gala par des particuliers</td><td>66 % déduits : 1 000 € coûtent 340 €</td><td>Rescrit mécénat ; 20 % du revenu</td></tr>
+        <tr><td>Dons du gala par des entreprises</td><td>60 % déduits : 10 000 € coûtent 4 000 €</td><td>20 000 € ou 0,5 % du CA</td></tr>
+        <tr><td>Prêt gratuit du local de Massy par la SCI</td><td>60 % de la valeur du prêt déduits</td><td>SCI à l'impôt sur les sociétés ; à valider</td></tr>
+        <tr><td>Donation temporaire de l'usufruit de Massy</td><td>Loyers non imposés chez le porteur</td><td>Acte notarié, 3 ans minimum</td></tr>
+        <tr><td>Pas d'impôt sur les sociétés, de TVA ni de CFE</td><td>Jusqu'à 25 % du bénéfice et 20 % des recettes</td><td>Activité non lucrative</td></tr>
+        <tr><td>Taxe sur les salaires</td><td>0 € pour un salarié au SMIC</td><td>Abattement associatif (≈ 23 k€)</td></tr>
+        <tr><td>Réduction générale des cotisations</td><td>Plusieurs centaines d'euros par mois</td><td>Automatique</td></tr>
+        <tr><td>Chèque emploi associatif</td><td>Paie faite par l'URSSAF</td><td>Moins de 20 salariés</td></tr>
+        <tr><td>Mutualisation Massy-Tolbiac</td><td>≈ 200 €/mois (comptable, assurance, logiciel)</td><td>Une seule association ; non compté</td></tr>
+      </table>
+    </div>
+    <p class="note">Formes possibles pour le salarié : CDI (recommandé), contrat aidé PEC si la personne y a droit, mise à disposition par une autre structure. Déconseillé : auto-entrepreneur (risque de requalification). Tous les points sont à valider avec un expert-comptable et un avocat fiscaliste.</p>
+  </div>
+  <div class="sf"><span>Waqf Campus · Tolbiac · 28/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 4 BUSINESS MODEL -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Le business model</span>
+  <h2>5,6 k€ de charges, 8,1 k€ de recettes : <em>+2,5 k€ par mois</em> sans aucun don</h2>
+  <p class="lead">Une fois le lieu lancé. Seul le loyer est payé pour le local, sans charges ni taxe foncière en plus. Aucun don régulier n'est compté.</p></div>
+  <div class="body">
+    <div class="grid g2" style="gap:20px">
+      <table>
+        <tr><th>Charges</th><th class="n">€/mois</th></tr>
+        <tr class="hl"><td>Loyer (Corvisart, charges comprises)</td><td class="n">3 002</td></tr>
+        <tr class="hl"><td>Salarié au SMIC, mutuelle et Navigo</td><td class="n">2 000</td></tr>
+        <tr><td>Électricité, chauffage</td><td class="n">220</td></tr>
+        <tr><td>Produits d'entretien, hygiène, papier</td><td class="n">80</td></tr>
+        <tr><td>Assurance (obligatoire pour accueillir du public)</td><td class="n">60</td></tr>
+        <tr><td>Badges, caméras, logiciel d'abonnements</td><td class="n">50</td></tr>
+        <tr><td>Petites réparations, renouvellement du mobilier</td><td class="n">50</td></tr>
+        <tr><td>Banque et logiciel de comptabilité</td><td class="n">40</td></tr>
+        <tr><td>Internet, eau</td><td class="n">65</td></tr>
+        <tr class="tot"><td>Total charges</td><td class="n">5 567</td></tr>
+      </table>
+      <table>
+        <tr><th>Recettes des clients</th><th class="n">€/mois</th></tr>
+        <tr class="hl"><td>200 pass à 29 €/mois (≈ 1 € par jour)</td><td class="n">5 800</td></tr>
+        <tr><td>Soirées louées aux associations (6 à 150 €)</td><td class="n">900</td></tr>
+        <tr><td>Salle de groupe (60 h à 10 €)</td><td class="n">600</td></tr>
+        <tr><td>Pass journée (150 à 3 €)</td><td class="n">450</td></tr>
+        <tr><td>Adhésions (10 €/an)</td><td class="n">170</td></tr>
+        <tr><td>Domiciliation d'associations (5 à 30 €)</td><td class="n">150</td></tr>
+        <tr class="tot"><td>Total recettes</td><td class="n">8 070</td></tr>
+      </table>
+    </div>
+    <div class="grid g3">
+      <div class="card ach"><div class="kpl">Bénéfice</div><div class="kpi">+2 503 €/mois</div>soit 30 k€ par an.</div>
+      <div class="card"><div class="kpl">Équilibre</div><div class="kpi">114 clients</div>à 29 €, ou 200 clients à 17 €.</div>
+      <div class="card"><div class="kpl">Sous 5 000 € de charges ?</div>Loyer + salaire = 5 002 €. Il faut un loyer plus bas (place de Rungis : 5 065 € au total) ou un salarié partagé avec Massy.</div>
+    </div>
+  </div>
+  <div class="sf"><span>Waqf Campus · Tolbiac · 28/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 5 RENTABILITÉ -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Quand c'est rentable, et comment financer d'autres lieux</span>
+  <h2>Rentable dès <em>avril 2027</em> ; un 2e lieu financé <em>en 27 mois</em></h2></div>
+  <div class="body">
+    <div class="card" style="padding:10px 14px 4px">
+      <h3>Résultat par mois, février 2027 à janvier 2028 (recettes − charges, sans don) · pertes du démarrage : 3,9 k€, couvertes par le gala</h3>
+      <svg viewBox="0 0 1150 230" width="100%" role="img" aria-label="Résultat mensuel la première année" style="font-family:Inter,sans-serif">
+<line x1="56" x2="1130" y1="200.0" y2="200.0" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="204.0" font-size="11" fill="#5B6676" text-anchor="end">-4 k€</text>
+<line x1="56" x2="1130" y1="177.8" y2="177.8" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="181.8" font-size="11" fill="#5B6676" text-anchor="end">-3 k€</text>
+<line x1="56" x2="1130" y1="155.5" y2="155.5" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="159.5" font-size="11" fill="#5B6676" text-anchor="end">-2 k€</text>
+<line x1="56" x2="1130" y1="133.2" y2="133.2" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="137.2" font-size="11" fill="#5B6676" text-anchor="end">-1 k€</text>
+<line x1="56" x2="1130" y1="111.0" y2="111.0" stroke="#E4DDCC" stroke-width="1.5"/>
+<text x="48" y="115.0" font-size="11" fill="#5B6676" text-anchor="end">0</text>
+<line x1="56" x2="1130" y1="88.8" y2="88.8" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="92.8" font-size="11" fill="#5B6676" text-anchor="end">+1 k€</text>
+<line x1="56" x2="1130" y1="66.5" y2="66.5" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="70.5" font-size="11" fill="#5B6676" text-anchor="end">+2 k€</text>
+<line x1="56" x2="1130" y1="44.2" y2="44.2" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="48.2" font-size="11" fill="#5B6676" text-anchor="end">+3 k€</text>
+<line x1="56" x2="1130" y1="22.0" y2="22.0" stroke="#E4DDCC" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="48" y="26.0" font-size="11" fill="#5B6676" text-anchor="end">+4 k€</text>
+<rect x="76.1" y="111.0" width="49.2" height="61.0" rx="3" fill="#B42318" fill-opacity="0.8"><title>Fév. : -2 742 €/mois</title></rect>
+<text x="100.8" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Fév.</text>
+<text x="100.8" y="187.0" font−size="12" font−weight="700" fill="#0E1B2C" text−anchor="middle">−2 742 €</text>
+<rect x="165.6" y="111.0" width="49.2" height="25.1" rx="3" fill="#B42318" fill-opacity="0.8"><title>Mars : -1 128 €/mois</title></rect>
+<text x="190.2" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Mars</text>
+<rect x="255.1" y="109.2" width="49.2" height="1.8" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Avr. : +82 €/mois</title></rect>
+<text x="279.8" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Avr.</text>
+<text x="279.8" y="102.2" font−size="12" font−weight="700" fill="#0E1B2C" text−anchor="middle">+82 €</text>
+<rect x="344.6" y="91.2" width="49.2" height="19.8" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Mai : +889 €/mois</title></rect>
+<text x="369.2" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Mai</text>
+<rect x="434.1" y="73.3" width="49.2" height="37.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Juin : +1 696 €/mois</title></rect>
+<text x="458.8" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Juin</text>
+<rect x="523.6" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Juil. : +2 503 €/mois</title></rect>
+<text x="548.2" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Juil.</text>
+<rect x="613.1" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Août : +2 503 €/mois</title></rect>
+<text x="637.8" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Août</text>
+<rect x="702.6" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Sept. : +2 503 €/mois</title></rect>
+<text x="727.2" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Sept.</text>
+<rect x="792.1" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Oct. : +2 503 €/mois</title></rect>
+<text x="816.8" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Oct.</text>
+<rect x="881.6" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Nov. : +2 503 €/mois</title></rect>
+<text x="906.2" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Nov.</text>
+<rect x="971.1" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Déc. : +2 503 €/mois</title></rect>
+<text x="995.8" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Déc.</text>
+<rect x="1060.6" y="55.3" width="49.2" height="55.7" rx="3" fill="#157F3D" fill-opacity="0.8"><title>Janv. : +2 503 €/mois</title></rect>
+<text x="1085.2" y="220" font-size="11" fill="#5B6676" text-anchor="middle">Janv.</text>
+<text x="1085.2" y="48.3" font−size="12" font−weight="700" fill="#0E1B2C" text−anchor="middle">+2 503 €</text>
+</svg>
+    </div>
+    <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:20px">
+      <table>
+        <tr><th>Clients × prix</th><th class="n">Bénéfice/an</th><th class="n">53 k€ réunis (2e lieu)</th></tr>
+        <tr class="hl"><td>200 × 29 € (prévu)</td><td class="n">30,0 k€</td><td class="n">27e mois</td></tr>
+        <tr><td>200 × 35 €</td><td class="n">44,4 k€</td><td class="n">19e mois</td></tr>
+        <tr><td>250 × 29 €</td><td class="n">47,4 k€</td><td class="n">18e mois</td></tr>
+        <tr><td>250 × 35 €</td><td class="n win">65,4 k€</td><td class="n win">14e mois</td></tr>
+      </table>
+      <table>
+        <tr><th>Test de résistance</th><th class="n">€/mois</th></tr>
+        <tr><td>Prévu</td><td class="n">+2 503</td></tr>
+        <tr><td>Local de la place de Rungis</td><td class="n win">+3 005</td></tr>
+        <tr><td>TVA appliquée sur le loyer</td><td class="n">+1 903</td></tr>
+        <tr><td>150 clients</td><td class="n">+1 053</td></tr>
+        <tr><td>120 clients et TVA sur le loyer</td><td class="n" style="color:var(--red)">−417</td></tr>
+        <tr><td>Même cas avec un pass à 33 €</td><td class="n win">+63</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="sf"><span>Waqf Campus · Tolbiac · 28/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 6 GALA -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Combien lever au gala du 28 novembre</span>
+  <h2><em>≈ 53 k€</em> pour ouvrir en février ; <em>47 k€</em> avec 2 mois de franchise</h2>
+  <p class="lead">Juridique, démarches et main-d'œuvre des travaux sont assurés par les bénévoles. Seuls le local, les matériaux, l'équipement et le démarrage sont financés. Pour les donateurs, 53 k€ coûtent réellement ≈ 18 k€ après réduction d'impôt.</p></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.15fr 1fr;gap:20px">
+      <table>
+        <tr><th>Le nécessaire</th><th class="n">€</th></tr>
+        <tr><td>Dépôt de garantie (3 mois, récupérable)</td><td class="n">9 006</td></tr>
+        <tr><td>Honoraires d'agence (0 avec un bailleur en direct)</td><td class="n">12 970</td></tr>
+        <tr><td>Loyers de décembre et janvier (0 avec une franchise)</td><td class="n">6 004</td></tr>
+        <tr><td>Matériaux : ablutions, cloison du recueillement, peinture, éclairage</td><td class="n">6 000</td></tr>
+        <tr><td>Sécurité incendie et contrôle</td><td class="n">2 000</td></tr>
+        <tr><td>Mobilier de réemploi (32 places), casiers, tapis</td><td class="n">4 000</td></tr>
+        <tr><td>Badges, caméras, wifi, poste d'accueil</td><td class="n">1 500</td></tr>
+        <tr><td>Espace détente : babyfoot, poufs, mini-bibliothèque</td><td class="n">1 400</td></tr>
+        <tr><td>Frais administratifs, communication de lancement</td><td class="n">800</td></tr>
+        <tr><td>Pertes de février et mars</td><td class="n">3 871</td></tr>
+        <tr><td>Réserve (1 mois de charges)</td><td class="n">5 567</td></tr>
+        <tr class="tot"><td>Total</td><td class="n">53 118</td></tr>
+      </table>
+      <div class="col">
+        <table>
+          <tr><th>Répartition possible</th><th class="n">Nombre</th><th class="n">Montant</th><th class="n">Total</th></tr>
+          <tr><td>Grand donateur principal</td><td class="n">1</td><td class="n">10 000 €</td><td class="n">10 k€</td></tr>
+          <tr><td>Grands donateurs</td><td class="n">8</td><td class="n">2 000 €</td><td class="n">16 k€</td></tr>
+          <tr><td>Donateurs</td><td class="n">20</td><td class="n">1 000 €</td><td class="n">20 k€</td></tr>
+          <tr><td>Petits dons</td><td class="n">35</td><td class="n">200 €</td><td class="n">7 k€</td></tr>
+          <tr class="tot"><td>Total</td><td class="n">64</td><td></td><td class="n">53 k€</td></tr>
+        </table>
+        <div class="card ach"><h3>Calendrier</h3>Gala le 28 novembre · bail mi-décembre · travaux en janvier par les bénévoles du BTP · ouverture début février 2027, juste avant le Ramadan.</div>
+        <div class="card red"><h3>Vigilance</h3>Si le passage de bureaux à lieu d'étude exige une autorisation de travaux (ERP), l'instruction peut durer 4 mois : la déposer dès la signature, sinon ouverture en avril.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Waqf Campus · Tolbiac · 28/10/2026</span><span class="pg"></span></div>
+</section>
+
+</div>
+
+<div id="ui">
+  <button id="prev">← Précédent</button>
+  <span id="count">1 / 6</span>
+  <button id="next">Suivant →</button>
+  <button id="mode">Mode lecture</button>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const N=slides.length;
+slides.forEach((s,k)=>{const p=s.querySelector('.pg');if(p)p.textContent=(k+1)+' / '+N;});
+let cur=0;
+function show(n){cur=Math.max(0,Math.min(N-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===cur));
+ document.getElementById('count').textContent=(cur+1)+' / '+N;document.getElementById('prog').style.width=((cur+1)/N*100)+'%';
+ try{history.replaceState(null,'','#'+(cur+1));}catch(e){}}
+function fit(){const st=document.getElementById('stage');if(document.body.classList.contains('read')){st.style.transform='none';st.style.zoom=Math.min(1,(window.innerWidth-32)/1280);return;}st.style.zoom='';
+ const s=Math.min(window.innerWidth/1300,(window.innerHeight-56)/730);st.style.transform='scale('+s+')';}
+document.getElementById('next').onclick=()=>show(cur+1);
+document.getElementById('prev').onclick=()=>show(cur-1);
+document.getElementById('mode').onclick=()=>{document.body.classList.toggle('read');document.getElementById('mode').textContent=document.body.classList.contains('read')?'Mode présentation':'Mode lecture';fit();};
+document.addEventListener('keydown',e=>{if(document.body.classList.contains('read'))return;
+ if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(cur+1);}
+ if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(cur-1);}
+ if(e.key==='Home')show(0);if(e.key==='End')show(N-1);});
+window.addEventListener('resize',fit);
+const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);fit();
+</script>
+</body>
+</html>
