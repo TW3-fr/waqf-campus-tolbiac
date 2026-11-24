@@ -81,7 +81,7 @@ svg text{font-family:Inter,sans-serif}
 .plan div{border-radius:6px;padding:7px;font-size:11px;font-weight:600;color:var(--navy);border:1px solid rgba(19,41,75,.15);display:flex;flex-direction:column;justify-content:space-between}
 .plan small{font-weight:500;color:var(--muted);font-size:10px}
 /* sources */
-ol.src{font-size:10.5px;line-height:1.4;columns:2;column-gap:36px;padding-left:20px}
+ol.src{font-size:11.5px;line-height:1.5;columns:2;column-gap:36px;padding-left:20px}
 ol.src li{break-inside:avoid;margin-bottom:4px}
 ol.src a{color:var(--teal)}
 #ui{position:fixed;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;justify-content:center;gap:10px;color:#c8d3e6;font-size:12px}
@@ -109,26 +109,25 @@ body.read #ui{background:#1b2433}
 <section class="slide cover">
   <div class="l">
     <div>
-      <div class="kicker">Waqf Campus · premier lieu : Tolbiac, Paris 13e · V2</div>
+      <div class="kicker">Waqf Campus · premier lieu : place d'Italie, Paris 13e · V2</div>
       <h1>Un lieu pour étudier, prier et se retrouver, financé une fois, utile pour toujours</h1>
-      <p>105 m² place d'Italie, à moins de 45 minutes de tout Paris : <b>40 places d'étude</b>, un coin prière ouvert à tous. Le lieu est un <b>waqf</b> : ce que vous donnez ce soir n'est jamais vendu. Une fois lancé, il vit de ses abonnés, sans appel aux dons, et chaque excédent prépare le lieu suivant.</p>
+      <p>105 m² au cœur du 13e, à moins de 45 minutes de tout Paris : <b>40 places d'étude</b>, des salles de travail amovibles, un espace de recueillement ouvert à tous. Le lieu est un <b>waqf</b> : ce que vous donnez ce soir n'est jamais vendu. Il vit ensuite de ses abonnés, et chaque excédent prépare le lieu suivant.</p>
       <div class="ask"><span>100 k€ ce soir, une seule fois</span><span class="o">Ouverture au printemps 2027</span></div>
     </div>
     <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Institut TW3 · association loi 1901 · gala du 28 novembre 2026<br>Chiffres sourcés (annexe) · hypothèses signalées · à valider par un expert-comptable</div>
   </div>
   <div class="r">
-    <div><b>40</b><span>places d'étude, coin prière compris dans l'espace</span></div>
-    <div><b>77</b><span>abonnés suffisent à l'équilibre, sans dons ni salaire fixe</span></div>
-    <div><b>37 000</b><span>étudiants musulmans pratiquants à moins de 45 min</span></div>
-    <div><b>0 €</b><span>de dons nécessaires après la 1re année · pass 49 €, 29 € boursier</span></div>
+    <div><b>250</b><span>étudiants abonnés visés, sur 37 000 étudiants musulmans pratiquants à moins de 45 min</span></div>
+    <div><b>1 café</b><span>par jour : le prix du pass, 49 €/mois</span></div>
+    <div><b>+4,8 k€</b><span>d'excédent par mois, sans aucun don</span></div>
+    <div><b>91 000 h</b><span>d'étude par an : 1 € donné ≈ 1 heure d'étude chaque année</span></div>
   </div>
 </section>
 
 <!-- 2 LE BESOIN -->
 <section class="slide">
   <div class="sh"><div class="kicker">Le besoin</div>
-    <h2>Tout Paris à moins de 45 minutes : <em>≈ 37 000 étudiants musulmans pratiquants</em></h2>
-</div>
+    <h2>Tout Paris à moins de 45 minutes : <em>≈ 37 000 étudiants musulmans pratiquants</em></h2></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:.9fr 1.1fr;flex:1">
       <div style="display:flex;flex-direction:column;gap:12px">
@@ -144,123 +143,141 @@ body.read #ui{background:#1b2433}
             <tr><td>30-45 min : reste de Paris</td><td class="n">≈ 300 000</td><td class="n">≈ 22 300</td></tr>
             <tr class="tot"><td>Total à moins de 45 min</td><td class="n">≈ 495 000</td><td class="n">≈ 36 800</td></tr>
           </table>
-          <div class="note" style="margin-top:6px">Tolbiac : 8 500-12 000 inscrits<a class="r" href="#s">6</a><a class="r" href="#s">7</a> ; Grands Moulins ≈ 26 000<a class="r" href="#s">23</a> <span class="tag">à vérifier</span>. Découpage des zones et 12 % × 62 % de pratiquants : <span class="tag">hypothèses</span>.</div></div>
-        <div class="tk n">150 abonnés visés : 1 étudiant musulman pratiquant sur 250 à moins de 45 min.</div>
+          <div class="note" style="margin-top:6px">Tolbiac : 8 500-12 000 inscrits<a class="r" href="#s">6</a><a class="r" href="#s">7</a> ; Grands Moulins ≈ 26 000<a class="r" href="#s">23</a> <span class="tag">à vérifier</span>. Zones et 12 % × 62 % de pratiquants : <span class="tag">hypothèses</span>.</div></div>
+        <div class="tk n">250 abonnés visés : 1 étudiant musulman pratiquant sur 150 à moins de 45 min.</div>
       </div>
-      <div class="card"><h3>Abonnés potentiels : la demande dépasse les 40 places</h3>
+      <div class="card"><h3>Abonnés potentiels : la demande remplit le lieu</h3>
         <svg id="zones" viewBox="0 0 600 330" width="100%" style="margin-top:8px"></svg>
-        <div class="note">Modèle de Huff<a class="r" href="#s">16</a> : la probabilité de venir baisse avec le carré du temps de trajet. Conversion des pratiquants en abonnés à moins de 15 min : 2,5 % (bas), 5 % (central), 10 % (haut) <span class="tag">hypothèses</span>, divisée par ≈ 5 à 15-30 min et par ≈ 14 à 30-45 min. Capacité : 40 places, soit ≈ 200 abonnés à 60 % d'occupation<a class="r" href="#s">11</a>.</div>
+        <div class="note">Modèle de Huff<a class="r" href="#s">16</a> : la probabilité de venir baisse avec le carré du temps de trajet. Conversion des pratiquants à moins de 15 min : 2,5 % (bas), 5 % (central), 10 % (haut) <span class="tag">hypothèses</span>. Capacité : 40 places × 91 h à 60 % d'occupation<a class="r" href="#s">11</a>, 8 h par abonné et par semaine <span class="tag">hypothèse</span>, soit ≈ 270 abonnés.</div>
       </div>
     </div>
   </div>
-  <div class="sf"><span>Waqf Campus · Tolbiac · V2 · 25/11/2026 · au-delà de 200 abonnés : liste d'attente, et l'argument pour un 2e lieu</span><span class="pg"></span></div>
+  <div class="sf"><span>Waqf Campus · V2 · 25/11/2026 · au-delà de la capacité : liste d'attente, et l'argument pour un 2e lieu</span><span class="pg"></span></div>
 </section>
 
-<!-- 3 LE CAS PRATIQUE -->
+<!-- 3 LE PLAN -->
 <section class="slide">
   <div class="sh"><div class="kicker">Le cas pratique, prêt à financer</div>
-    <h2>Corvisart : 105 m² en rez-de-chaussée, <em>40 places</em> et un coin prière</h2></div>
+    <h2>Corvisart, 105 m² : <em>un seul grand espace</em> qui se transforme</h2></div>
   <div class="body">
-    <div class="grid" style="grid-template-columns:1.15fr .85fr;flex:1">
-      <div class="card"><h3>Aménagement : un seul grand espace</h3>
-        <div class="plan" style="height:300px">
-          <div style="grid-column:1/9;grid-row:1/6;background:#E8EDF5">Espace d'étude ouvert<small>≈ 64 m² · 40 places, dont 1 table de groupe de 6</small></div>
-          <div style="grid-column:9/13;grid-row:1/4;background:var(--teal-l);border-left:3px dashed var(--teal)">Coin prière<small>≈ 14 m² · 15-18 pers. · derrière un rideau ignifugé</small></div>
-          <div style="grid-column:9/11;grid-row:4/6;background:var(--teal-l)">Lave-pieds bas<small>2 postes</small></div>
-          <div style="grid-column:11/13;grid-row:4/5;background:#f1f1ee">WC hommes</div>
-          <div style="grid-column:11/13;grid-row:5/6;background:#f1f1ee">WC femmes, PMR</div>
-          <div style="grid-column:1/5;grid-row:6/7;background:var(--gold-l)">Accueil, casiers, café<small>≈ 9 m²</small></div>
-          <div style="grid-column:5/13;grid-row:6/7;background:#fff">Entrée sur rue, allée d'évacuation<small>≈ 9 m²</small></div>
-        </div>
-        <div class="note" style="margin-top:6px">Annonce : 3 002 € HT hors charges, ERP 5e catégorie, 2 WC, bail 3/6/9<a class="r" href="#s">1</a>. Pas de cloison ni de salle d'ablutions. Effectif plafonné à 49 personnes : une sortie de 1,40 m suffit si personne n'a plus de 25 m à parcourir<a class="r" href="#s">18</a>. Plan indicatif à valider par le bureau de contrôle.</div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card"><h3>Comment le lieu fonctionne</h3>
-          <table>
-            <tr><td>Horaires</td><td>9h-22h, 7j/7</td></tr>
-            <tr><td>Accès</td><td>Badge nominatif, abonnements en ligne, caméras et télésurveillance</td></tr>
-            <tr><td>Présence</td><td>Un responsable formé toujours sur place, comme l'exige la règle ERP<a class="r" href="#s">18</a> : bénévoles TW3 et 2 volontaires en service civique<a class="r" href="#s">19</a></td></tr>
-            <tr><td>1re année</td><td>Un coordinateur salarié pour lancer le lieu, payé par la levée</td></tr>
-            <tr><td>Tarifs</td><td>49 €/mois · 29 € boursier · 5 € la journée</td></tr>
-          </table></div>
-        <div class="card gold"><h3>Ce qui est déjà acquis</h3>
-          <ul class="b"><li>Association porteuse : Institut TW3 (AGE du 20/11/2026)</li><li>Juristes, avocats et professionnels du BTP bénévoles</li><li>Un réseau de bénévoles et d'étudiants pour tenir les permanences</li></ul></div>
+    <div class="grid" style="grid-template-columns:1.55fr .45fr;flex:1">
+      <div class="card" style="padding:10px 12px"><svg id="plan" viewBox="0 0 820 430" width="100%"></svg></div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px">
+        <div class="card"><h3>3 usages, 1 espace</h3>
+          <ul class="b">
+            <li><b>Étude</b> : 40 places, dont 2 salles de 6 fermées par des cloisons mobiles.</li>
+            <li><b>Prière</b> : 14 m² dans la salle, délimités au sol, 15-18 personnes.</li>
+            <li><b>Événements</b> : tout se replie, jusqu'à 49 personnes.</li>
+          </ul></div>
+        <div class="card"><h3>Sanitaires conformes</h3>
+          <ul class="b">
+            <li>WC accessible fauteuil (mixte possible en ERP existant<a class="r" href="#s">24</a>) : 1,70 × 2,20 m, espace 0,80 × 1,30 m et cercle de 1,50 m.</li>
+            <li>WC standard : 1,00 × 1,60 m.</li>
+            <li>Lave-pieds bas et lavabo : 1,25 × 1,10 m.</li>
+            <li>Total ≈ 7 m², 7 % de la surface.</li>
+          </ul></div>
+        <div class="note">Annonce : 3 002 € HT hors charges, ERP 5, 2 WC, bail 3/6/9<a class="r" href="#s">1</a>. Forme rectangulaire supposée (15 × 7 m), à recaler sur le plan réel. Effectif ≤ 49 : une sortie de 1,40 m<a class="r" href="#s">18</a>.</div>
       </div>
     </div>
   </div>
-  <div class="sf"><span>Densité : 1,6 m² par place dans l'espace d'étude, tables de 2 et allées de 0,90 m · 34 places à 1,9 m² si le plan l'impose</span><span class="pg"></span></div>
+  <div class="sf"><span>Plan à l'échelle 1:100 sur une emprise supposée · tables de 1,20 × 0,60 m pour 2 · cloisons amovibles acoustiques sur rail</span><span class="pg"></span></div>
 </section>
 
-<!-- 4 MODELE -->
+<!-- 4 LE PRIX -->
 <section class="slide">
-  <div class="sh"><div class="kicker">Le modèle économique, après la 1re année</div>
-    <h2>4,9 k€ de charges, 7,6 k€ de recettes : <em>sans dons, équilibre dès 77 abonnés</em></h2>
-    <div class="lead">Moyenne mensuelle sur une année avec 150 abonnés et 250 pass journée par mois, été compris (juillet-août à 25 % des abonnements). Tout compris : charges locatives, taxes, imprévus.</div></div>
+  <div class="sh"><div class="kicker">Le prix</div>
+    <h2>49 € par mois : <em>moins qu'un café par jour</em></h2>
+    <div class="lead">1,63 € par jour pour une place au calme de 9h à 22h, un coin prière et une communauté. 0,97 € par jour pour un boursier.</div></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.2fr .8fr;flex:1">
+      <div class="card"><h3>Ce que coûte un mois</h3><svg id="prices" viewBox="0 0 640 300" width="100%"></svg></div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="card navy"><div class="kpl">Un café au comptoir à Paris</div><div class="kpi">2,50 à 3 €</div><div class="kpl" style="text-transform:none;font-size:13px">2,72 € en moyenne sur 110 cafés parisiens<a class="r" href="#s">25</a>. Le pass coûte 1,63 € par jour.</div></div>
+        <div class="card"><h3>Les tarifs</h3>
+          <table>
+            <tr><td>Pass mensuel</td><td class="n">49 €</td></tr>
+            <tr><td>Pass boursier</td><td class="n">29 €</td></tr>
+            <tr><td>Journée</td><td class="n">5 €</td></tr>
+            <tr><td>Salle de 6, à l'heure</td><td class="n">10 €</td></tr>
+            <tr><td>Soirée privatisée (49 pers.)</td><td class="n">300 €</td></tr>
+          </table>
+          <div class="note" style="margin-top:6px">Une salle de 40-50 personnes se loue dès 360 à 515 € la soirée à Paris<a class="r" href="#s">26</a>.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Pass moyen retenu : 43 €, avec 30 % de boursiers <span class="tag">hypothèse</span></span><span class="pg"></span></div>
+</section>
+
+<!-- 5 MODELE -->
+<section class="slide">
+  <div class="sh"><div class="kicker">Le modèle économique, lieu installé</div>
+    <h2>7,1 k€ de charges, 11,9 k€ de recettes : <em>+4,8 k€ par mois, sans aucun don</em></h2>
+    <div class="lead">Moyenne mensuelle sur une année avec 250 abonnés et 4 événements par mois, été compris (juillet-août à 25 % des abonnements). Coordinateur salarié compris.</div></div>
   <div class="body">
     <div class="grid g2">
-      <div class="card"><h3>Où va l'argent · 4 889 €/mois</h3><div class="donutbox"><svg id="d_ch" viewBox="0 0 200 200"></svg><div class="legend" id="l_ch"></div></div></div>
-      <div class="card"><h3>D'où il vient · 7 634 €/mois</h3><div class="donutbox"><svg id="d_rev" viewBox="0 0 200 200"></svg><div class="legend" id="l_rev"></div></div></div>
+      <div class="card"><h3>Où va l'argent · 7 083 €/mois</h3><div class="donutbox"><svg id="d_ch" viewBox="0 0 200 200"></svg><div class="legend" id="l_ch"></div></div></div>
+      <div class="card"><h3>D'où il vient · 11 906 €/mois</h3><div class="donutbox"><svg id="d_rev" viewBox="0 0 200 200"></svg><div class="legend" id="l_rev"></div></div></div>
     </div>
     <div class="grid g3">
-      <div class="card navy"><div class="kpl">Excédent à 150 abonnés</div><div class="kpi">+2 745 €/mois</div><div class="kpl">à 120 abonnés : +1 616 €/mois</div></div>
-      <div class="card"><div class="kpl">Recettes annuelles</div><div class="kpi">≈ 92 k€</div><div class="note">au-dessus de la franchise de 81 051 €<a class="r" href="#s">12</a> : rescrit de non-lucrativité indispensable</div></div>
-      <div class="card"><div class="kpl">Dons nécessaires</div><div class="kpi">0 €</div><div class="note">Pass moyen de 43 € (30 % de boursiers <span class="tag">hypothèse</span>)</div></div>
+      <div class="card navy"><div class="kpl">Équilibre</div><div class="kpi">122 abonnés</div><div class="kpl">la moitié de l'objectif</div></div>
+      <div class="card"><div class="kpl">Même avec TVA et impôt sur les sociétés</div><div class="kpi">+2,4 k€/mois</div><div class="note">Recettes ≈ 143 k€/an, au-dessus de la franchise de 81 051 €<a class="r" href="#s">12</a> : rescrit demandé, et le modèle tient même s'il est refusé.</div></div>
+      <div class="card"><div class="kpl">Excédent annuel</div><div class="kpi">≈ 58 k€</div><div class="note">mis de côté pour le 2e lieu</div></div>
     </div>
   </div>
-  <div class="sf"><span>Charges locatives et taxes estimées à partir d'annonces voisines et des tarifs 2026<a class="r" href="#s">2</a><a class="r" href="#s">14</a> · énergie : 191 kWh/m²/an<a class="r" href="#s">15</a></span><span class="pg"></span></div>
+  <div class="sf"><span>Charges locatives et taxes estimées à partir d'annonces voisines et des tarifs 2026<a class="r" href="#s">2</a><a class="r" href="#s">14</a> · énergie : 191 kWh/m²/an<a class="r" href="#s">15</a> · SMIC 2026<a class="r" href="#s">3</a><a class="r" href="#s">4</a></span><span class="pg"></span></div>
 </section>
 
-<!-- 5 EQUIPE -->
+<!-- 6 EQUIPE -->
 <section class="slide">
   <div class="sh"><div class="kicker">L'équipe</div>
-    <h2>Pourquoi pas de salaire fixe : <em>chaque salarié ajoute ≈ 50 abonnés</em> au point d'équilibre</h2>
-    <div class="lead">Un temps plein au SMIC coûte 2 030 €/mois à l'association<a class="r" href="#s">3</a><a class="r" href="#s">4</a> et n'est présent que ≈ 31 h par semaine (congés compris). L'ouverture 9h-22h, 7j/7, demande 91 h de présence.</div></div>
+    <h2>Un coordinateur, des volontaires, des bénévoles : <em>une équipe légère et conforme</em></h2>
+    <div class="lead">La règle ERP impose un responsable formé sur place à chaque heure d'ouverture<a class="r" href="#s">18</a>. Les badges gèrent l'accès et les abonnements ; l'équipe assure la présence.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.15fr .85fr;flex:1">
-      <div class="card"><h3>Abonnés nécessaires à l'équilibre selon l'équipe (pass moyen 43 €, objectif : 150)</h3><svg id="ladder" viewBox="0 0 640 300" width="100%"></svg></div>
+      <div class="card"><h3>Abonnés nécessaires à l'équilibre selon l'équipe (objectif : 250)</h3><svg id="ladder" viewBox="0 0 640 300" width="100%"></svg></div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card green"><h3>Notre choix</h3>
+        <div class="card green"><h3>Notre équipe</h3>
           <ul class="b">
-            <li><b>1re année</b> : un coordinateur salarié, payé par la levée, qui lance le lieu et forme les bénévoles.</li>
-            <li><b>Ensuite</b> : permanences tenues par des bénévoles formés et 2 services civiques (114,85 €/mois chacun<a class="r" href="#s">19</a>).</li>
-            <li><b>Coordinateur gardé</b> si le lieu dépasse 140 abonnés : à 150, il est payé par les abonnements (+653 €/mois).</li>
+            <li><b>1 coordinateur salarié</b> au SMIC (2 030 €/mois) : accueil, abonnements, événements, bénévoles.</li>
+            <li><b>2 volontaires en service civique</b> (114,85 €/mois chacun<a class="r" href="#s">19</a>).</li>
+            <li><b>Des bénévoles TW3 formés</b> pour les soirs et le week-end.</li>
           </ul></div>
-        <div class="card"><h3>Ce que l'association apporte</h3>
+        <div class="card"><h3>Les atouts de l'association</h3>
           <ul class="b">
-            <li>Taxe sur les salaires à 0 € grâce à l'abattement de 24 256 €<a class="r" href="#s">20</a>.</li>
+            <li>Taxe sur les salaires à 0 € (abattement de 24 256 €<a class="r" href="#s">20</a>).</li>
             <li>Paie gratuite par le chèque emploi associatif.</li>
-            <li>Bénévolat et service civique, interdits à une société.</li>
+            <li>Bénévolat et service civique, impossibles en société.</li>
           </ul></div>
       </div>
     </div>
   </div>
-  <div class="sf"><span>Les badges gèrent l'accès et les abonnements, mais ne remplacent pas la présence d'un responsable exigée en ERP<a class="r" href="#s">18</a></span><span class="pg"></span></div>
+  <div class="sf"><span>Un temps plein n'est présent que ≈ 31 h par semaine, congés compris, pour 91 h d'ouverture</span><span class="pg"></span></div>
 </section>
 
-<!-- 6 PREMIERE ANNEE -->
+<!-- 7 PREMIERE ANNEE -->
 <section class="slide">
   <div class="sh"><div class="kicker">La première année</div>
-    <h2>Un creux de 26 k€ pendant le lancement, <em>entièrement couvert par la levée</em></h2>
-    <div class="lead">Résultat mois par mois, ouverture en avril 2027, avec le coordinateur salarié et 150 abonnés atteints progressivement en 12 mois (30 % au 1er mois). Année 2 : moyenne mensuelle sans salarié ; +653 €/mois si le coordinateur est gardé.</div></div>
+    <h2>Excédentaire <em>dès la rentrée de septembre</em>, le 6e mois</h2>
+    <div class="lead">Résultat mois par mois, ouverture en avril 2027, coordinateur salarié compris, 250 abonnés atteints progressivement en 12 mois (30 % au 1er mois).</div></div>
   <div class="body">
     <div class="card" style="flex:1"><svg id="months" viewBox="0 0 1160 330" width="100%"></svg></div>
     <div class="grid g3">
-      <div class="tk g">Coût total du lancement : 25 757 €, salaire compris.</div>
-      <div class="tk">Excédent dès le 10e mois, sans dons.</div>
+      <div class="tk g">Coût total du démarrage : 15 539 €, couvert par la levée.</div>
+      <div class="tk">À partir de septembre, le lieu paie tout seul.</div>
       <div class="tk n">Bail début 2027, travaux, ouverture dès l'accord ERP.</div>
     </div>
   </div>
   <div class="sf"><span>Montée en charge et saisonnalité : hypothèses prudentes</span><span class="pg"></span></div>
 </section>
 
-<!-- 7 LA LEVEE -->
+<!-- 8 LA LEVEE -->
 <section class="slide">
   <div class="sh"><div class="kicker">La levée</div>
-    <h2>100 k€, une seule fois : <em>ouvrir, lancer, et garder 7 mois de réserve</em></h2></div>
+    <h2>100 k€, une seule fois, pour <em>un lieu qui se finance ensuite tout seul</em></h2></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.1fr .9fr;flex:1">
-      <div class="card"><h3>Utilisation des 100 k€</h3><div class="donutbox" style="grid-template-columns:290px 1fr;margin-top:12px"><svg id="d_use" viewBox="0 0 200 200"></svg><div class="legend" id="l_use"></div></div>
-        <div class="note" style="margin-top:10px">Bailleur en direct, sans honoraires d'agence. Avec une agence (≈ 13 k€), la réserve tombe à 24 k€. Main-d'œuvre des travaux bénévole. Hors coût du gala.</div></div>
+      <div class="card"><h3>Ce que financent vos 100 k€</h3><div class="donutbox" style="grid-template-columns:270px 1fr;margin-top:8px"><svg id="d_use" viewBox="0 0 200 200"></svg><div class="legend" id="l_use"></div></div>
+        <div class="note" style="margin-top:8px">Bailleur en direct, sans honoraires d'agence (≈ 13 k€ sinon, pris sur la réserve). Main-d'œuvre des travaux bénévole.</div></div>
       <div style="display:flex;flex-direction:column;gap:12px">
         <div class="card"><h3>Comment réunir 100 k€</h3>
           <table>
@@ -271,34 +288,34 @@ body.read #ui{background:#1b2433}
             <tr><td>200 €</td><td class="n">150</td><td class="n">30 k€</td><td class="n">68 €</td></tr>
             <tr class="tot"><td>Total</td><td class="n">196</td><td class="n">100 k€</td><td class="n"></td></tr>
           </table>
-          <div class="note" style="margin-top:6px">* pour un particulier imposable : réduction de 66 %, dans la limite de 20 % du revenu ; 60 % pour une entreprise<a class="r" href="#s">13</a>. Le prix du dîner n'est pas un don.</div></div>
-        <div class="card navy"><div class="kpl">Pour les donateurs</div><div class="kpi">100 k€ ≈ 34 k€ réels</div><div class="kpl" style="text-transform:none;font-size:13px">Après la réduction d'impôt de 66 %, si tous les dons viennent de particuliers imposables.</div></div>
+          <div class="note" style="margin-top:6px">* particulier imposable : 66 % de réduction d'impôt, dans la limite de 20 % du revenu ; 60 % pour une entreprise<a class="r" href="#s">13</a>.</div></div>
+        <div class="card navy"><div class="kpl">Ce que produit votre don</div><div class="kpi">1 € ≈ 1 h d'étude par an</div><div class="kpl" style="text-transform:none;font-size:13px">250 abonnés × 8 h × 45 semaines ≈ 91 000 heures d'étude chaque année, pour 100 k€ donnés une fois.</div></div>
       </div>
     </div>
   </div>
-  <div class="sf"><span>Dépôt de garantie : 3 mois de loyer HT, conforme à l'annonce<a class="r" href="#s">1</a> · reçus fiscaux sous réserve du rescrit mécénat</span><span class="pg"></span></div>
+  <div class="sf"><span>Dépôt de garantie : 3 mois de loyer HT<a class="r" href="#s">1</a> · reçus fiscaux sous réserve du rescrit mécénat · le coin prière n'est pas financé par des dons défiscalisés</span><span class="pg"></span></div>
 </section>
 
-<!-- 8 PRUDENCE -->
+<!-- 9 PRUDENCE -->
 <section class="slide">
-  <div class="sh"><div class="kicker">Ce qui peut mal tourner</div>
-    <h2>Nous avons testé les risques : <em>le lieu reste excédentaire</em> dans tous les cas</h2></div>
+  <div class="sh"><div class="kicker">Solidité</div>
+    <h2>Excédentaire <em>dans tous les scénarios testés</em>, même à 150 abonnés</h2></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.15fr .85fr;flex:1">
-      <div class="card"><h3>Excédent mensuel après la 1re année, selon le scénario</h3><svg id="stress" viewBox="0 0 640 380" width="100%"></svg></div>
+      <div class="card"><h3>Excédent mensuel du lieu installé, selon le scénario</h3><svg id="stress" viewBox="0 0 640 380" width="100%"></svg></div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card red"><h3>Les points à surveiller</h3>
-          <ul class="b">
-            <li><b>La fiscalité</b> : ≈ 92 k€ de recettes, au-dessus de la franchise de 81 051 € : sans rescrit, impôt sur les sociétés et TVA.</li>
-            <li><b>Les bénévoles</b> : sans responsable présent, le créneau ferme. On perd des heures, pas d'argent.</li>
-            <li><b>La TVA sur le loyer</b> : à exclure dans le bail.</li>
-          </ul></div>
         <div class="card green"><h3>Nos garde-fous</h3>
           <ul class="b">
             <li>Pré-inscriptions payantes avant de signer le bail.</li>
-            <li>Abonnement à l'année proposé, pour limiter le creux de l'été.</li>
             <li>Rescrits fiscal et mécénat avant l'ouverture.</li>
-            <li>Liste d'attente au-delà de 200 abonnés : elle justifie le 2e lieu.</li>
+            <li>Bail sans TVA négocié, 6 mois de réserve.</li>
+            <li>Abonnement à l'année pour lisser l'été.</li>
+            <li>Liste d'attente au-delà de 270 abonnés : le 2e lieu.</li>
+          </ul></div>
+        <div class="card"><h3>À surveiller</h3>
+          <ul class="b">
+            <li>La disponibilité des bénévoles : sans responsable, le créneau ferme.</li>
+            <li>La fiscalité, sécurisée par rescrit.</li>
           </ul></div>
       </div>
     </div>
@@ -306,26 +323,26 @@ body.read #ui{background:#1b2433}
   <div class="sf"><span>Audit complet et simulateur : tw3-fr.github.io/waqf-campus-tolbiac/audit.html<a class="r" href="#s">17</a></span><span class="pg"></span></div>
 </section>
 
-<!-- 9 APPEL -->
+<!-- 10 APPEL -->
 <section class="slide cover">
   <div class="l">
     <div>
       <div class="kicker">Ce soir</div>
-      <h1>Un don ce soir, des milliers d'heures d'étude et de prière ensuite</h1>
-      <p>Le waqf ne se consomme pas : l'aménagement et le mobilier restent au service des étudiants. Le lieu paie ses propres charges, et chaque excédent est mis de côté pour ouvrir le suivant.</p>
+      <h1>Un don ce soir, 91 000 heures d'étude et de prière chaque année</h1>
+      <p>Le waqf ne se consomme pas : l'aménagement et le mobilier restent au service des étudiants. Le lieu paie ses propres charges dès sa première rentrée, et ses excédents financent le lieu suivant.</p>
       <div class="ask"><span>1 000 € = 340 € réels</span><span class="o">200 € = 68 € réels</span><span class="o">Bénévolat : tenir une permanence</span></div>
     </div>
-    <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Reçus fiscaux sous réserve du rescrit mécénat · le coin prière n'est pas financé par des dons défiscalisés<br>Sources et hypothèses : slide suivante</div>
+    <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Reçus fiscaux sous réserve du rescrit mécénat<br>Sources et hypothèses : slide suivante</div>
   </div>
   <div class="r">
     <div><b>100 k€</b><span>une seule fois, pour ouvrir</span></div>
-    <div><b>40</b><span>places d'étude et un coin prière</span></div>
-    <div><b>77</b><span>abonnés pour que le lieu tienne seul</span></div>
-    <div><b>1 lieu</b><span>puis un réseau, financé par ses excédents</span></div>
+    <div><b>40</b><span>places, des salles amovibles, un coin prière</span></div>
+    <div><b>250</b><span>étudiants abonnés</span></div>
+    <div><b>≈ 58 k€</b><span>d'excédent par an pour ouvrir le 2e lieu</span></div>
   </div>
 </section>
 
-<!-- 10 SOURCES -->
+<!-- 11 SOURCES -->
 <section class="slide" id="s">
   <div class="sh"><div class="kicker">Annexe</div><h2>Sources et hypothèses</h2></div>
   <div class="body">
@@ -334,7 +351,7 @@ body.read #ui{background:#1b2433}
       <li>Annonce place de Rungis, charges 1 608 € HT/an : <a href="https://www.bureauxlocaux.com/annonce/location-pure-11585-m2-75013-paris--42314961">bureauxlocaux.com</a></li>
       <li>SMIC au 1er juin 2026, 1 867,02 € brut : <a href="https://www.info.gouv.fr/public/index.php/actualite/le-smic-revalorise-le-1er-juin-2026">info.gouv.fr</a></li>
       <li>Réduction générale dégressive unique 2026 : <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F24542">service-public.fr F24542</a></li>
-      <li>Passe Navigo 2026, 90,80 € (50 % employeur) : <a href="https://www.iledefrance-mobilites.fr/actualites/passe-navigo-augmentation-pourquoi">IDFM</a></li>
+      <li>Passe Navigo 2026, 90,80 € : <a href="https://www.iledefrance-mobilites.fr/actualites/passe-navigo-augmentation-pourquoi">IDFM</a></li>
       <li>12 000 étudiants inscrits à Tolbiac (2018) : <a href="https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QG801.pdf">Assemblée nationale</a></li>
       <li>Centre La Chapelle, ouvert le 26/01/2026 : <a href="https://www.pantheonsorbonne.fr/universite/projets/centre-chapelle">Paris 1</a></li>
       <li>INSEE, Trajectoires et Origines 2 : <a href="https://www.insee.fr/fr/statistiques/6793296">insee.fr</a></li>
@@ -345,32 +362,34 @@ body.read #ui{background:#1b2433}
       <li>Réduction d'impôt pour dons, 66 % : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F426">service-public.fr F426</a></li>
       <li>Taxe sur les bureaux en Île-de-France 2026 : <a href="https://www.legifiscal.fr/actualites-fiscales/4416-taxe-bureaux-ile-france-provence-1er-mars-2026.html">Légifiscal</a></li>
       <li>Consommation des bureaux franciliens, 191 kWh/m²/an : <a href="https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/plaquette_performance_energetique_bureaux_drieat.pdf">DRIEAT</a></li>
-      <li>Modèle gravitaire de Huff (effet de la distance) : <a href="https://resources.arcgis.com/en/help/main/10.2/00mm/00mm0000004w000000.htm">ArcGIS</a></li>
-      <li>Audit complet, calculs détaillés et simulateur : <a href="audit.html">audit.html</a></li>
-      <li>ERP de 5e catégorie : sorties (PE 11) et présence d'un responsable (PE 27) : <a href="https://www.strasbourg.eu/documents/d/strasbourg.eu/principales_regles_erp_5e_sans_hebergement-202606">Strasbourg, rappel réglementaire</a></li>
-      <li>Service civique : 619,83 €/mois, dont 114,85 € pour la structure : <a href="https://www.info.gouv.fr/actualite/service-civique-conditions-missions-indemnites">info.gouv.fr</a></li>
+      <li>Modèle gravitaire de Huff : <a href="https://resources.arcgis.com/en/help/main/10.2/00mm/00mm0000004w000000.htm">ArcGIS</a></li>
+      <li>Audit complet et simulateur : <a href="audit.html">audit.html</a></li>
+      <li>ERP de 5e catégorie, sorties (PE 11) et présence d'un responsable (PE 27) : <a href="https://www.strasbourg.eu/documents/d/strasbourg.eu/principales_regles_erp_5e_sans_hebergement-202606">Strasbourg</a></li>
+      <li>Service civique, 114,85 € pour la structure : <a href="https://www.info.gouv.fr/actualite/service-civique-conditions-missions-indemnites">info.gouv.fr</a></li>
       <li>Taxe sur les salaires, abattement des associations : <a href="https://www.impots.gouv.fr/professionnel/questions/mon-association-peut-elle-etre-redevable-de-la-taxe-sur-les-salaires">impots.gouv.fr</a></li>
-      <li>829 552 étudiants en Île-de-France en 2024-2025 : <a href="https://www.cci-paris-idf.fr/sites/default/files/2026-10/enseignement.pdf">CCI Paris Île-de-France, chiffres-clés 2026-2027</a></li>
-      <li>Paris regroupe ≈ 50 % des étudiants franciliens (Apur, 2024) : <a href="https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/infographie_etudiants_charte_drieat_a2_def.pdf">DRIEAT</a></li>
+      <li>829 552 étudiants en Île-de-France en 2024-2025 : <a href="https://www.cci-paris-idf.fr/sites/default/files/2026-10/enseignement.pdf">CCI Paris Île-de-France</a></li>
+      <li>Paris ≈ 50 % des étudiants franciliens (Apur, 2024) : <a href="https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/infographie_etudiants_charte_drieat_a2_def.pdf">DRIEAT</a></li>
       <li>Campus des Grands Moulins, ≈ 25 900 étudiants (non vérifié) : <a href="https://en.wikipedia.org/wiki/The_Great_Mills_of_Paris">Wikipedia</a></li>
+      <li>Accessibilité des ERP existants, sanitaires (arrêté du 8 décembre 2014) : <a href="https://www.guyane.developpement-durable.gouv.fr/IMG/pdf/Arrete_08_dec_2014_ERP_EXistant.pdf">arrêté</a>, <a href="https://www.seine-maritime.gouv.fr/contenu/telechargement/59546/419197/file/Notice_accessibilite_illustree_ERP_existant_nov_2021.pdf">notice illustrée</a></li>
+      <li>Prix du café à Paris, 2,72 € en moyenne (110 cafés) : <a href="https://www.france-hotel-guide.com/fr/blog/?p=17685">France Hôtel Guide</a> ; 2,50-3,50 € au comptoir : <a href="https://www.letribunaldunet.fr/argent/pourquoi-cafe-comptoir-si-cher-vrai-cout.html">Le Tribunal du Net</a></li>
+      <li>Location de salles de 40-50 personnes à Paris, dès 360-515 € : <a href="https://www.1001salles.com/mariage/31608-friends-vaugirard.aspx">1001salles</a></li>
     </ol>
-    <div class="card" style="font-size:12px"><b>Hypothèses non sourcées</b> : part de musulmans retenue (12 %), découpage des zones de trajet, conversion en abonnés (5 % à moins de 15 min, puis loi de Huff), 250 pass journée par mois, 30 % de boursiers, été à 25 %, montée en charge sur 12 mois, densité de 1,6 m² par place, mutuelle 35 €, électricité 0,22 €/kWh, assurance et télésurveillance 150 €/mois, disponibilité des bénévoles. Le rôle des bénévoles et des volontaires comme responsables de permanence est à valider avec l'avocat et le bureau de contrôle.</div>
+    <div class="card" style="font-size:11.5px"><b>Hypothèses non sourcées</b> : 12 % de musulmans, zones de trajet, conversion 5 % à moins de 15 min puis loi de Huff, 8 h par abonné et par semaine, 30 % de boursiers, 150 pass journée et 4 événements par mois, été à 25 %, montée en charge sur 12 mois, emprise de 15 × 7 m, mutuelle 35 €, électricité 0,22 €/kWh, assurance et télésurveillance, disponibilité des bénévoles (à valider avec l'avocat et le bureau de contrôle).</div>
   </div>
-  <div class="sf"><span>Waqf Campus · Tolbiac · V2 · 25/11/2026 · la V1 du 28/10 reste disponible : v1.html</span><span class="pg"></span></div>
+  <div class="sf"><span>Waqf Campus · V2 · 25/11/2026 · la V1 du 28/10 reste disponible : v1.html</span><span class="pg"></span></div>
 </section>
 
 </div>
 
 <div id="ui">
   <button id="prev">← Précédent</button>
-  <span id="count">1 / 10</span>
+  <span id="count">1 / 11</span>
   <button id="next">Suivant →</button>
   <button id="mode">Mode lecture</button>
   <a href="audit.html">Audit</a>
 </div>
 
 <script>
-const NS='http://www.w3.org/2000/svg';
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const fr=n=>Math.round(n).toLocaleString('fr-FR');
 function donut(id,lid,data,center){
@@ -385,12 +404,12 @@ function donut(id,lid,data,center){
   document.getElementById(lid).innerHTML=data.map(d=>`<div><i style="background:${d[2]}"></i><span>${d[0]}</span><span class="v">${fr(d[1])} €</span><span class="p">${Math.round(d[1]/tot*100)} %</span></div>`).join('');
 }
 const C=['--c1','--c2','--c3','--c4','--c5','--c6'].map(css);
-donut('d_ch','l_ch',[['Loyer HT hors charges',3002,C[1]],['Fonctionnement, assurance, télésurveillance',765,C[3]],['Charges locatives, taxes',400,C[4]],['Énergie',350,C[2]],['2 services civiques',230,C[0]],['Imprévus 3 %',142,C[5]]],['4,9 k€','par mois']);
-donut('d_rev','l_rev',[['Abonnements (150 × 43 € moyen)',5644,C[0]],['Pass journée (250 × 5 €)',1250,C[2]],['Table de groupe, privatisations',540,C[3]],['Adhésions',200,C[4]]],['7,6 k€','par mois']);
-donut('d_use','l_use',[['Lancement : 1re année, salaire compris',25757,C[1]],['Entrée et travaux',37510,C[0]],['Réserve : 7,5 mois de charges',36733,C[2]]],['100 k€','une seule fois']);
-// détail entrée et travaux dans la légende
-document.getElementById('l_use').insertAdjacentHTML('beforeend','<div style="grid-template-columns:1fr;color:var(--muted);font-size:11.5px;margin-top:6px">Entrée et travaux : dépôt 9 006 € · loyers pendant les travaux 6 804 € · matériaux 8 500 € (rideau ignifugé, lave-pieds, électricité, sol, éclairage) · sécurité incendie et dossier ERP 3 500 € · mobilier 40 places 5 200 € · badges et caméras 2 500 € · lancement 2 000 €</div>');
+donut('d_ch','l_ch',[['Loyer HT hors charges',3002,C[1]],['Coordinateur salarié',2030,C[0]],['Fonctionnement, assurance, télésurveillance',865,C[3]],['Charges locatives, taxes',400,C[4]],['Énergie',350,C[2]],['2 services civiques',230,C[5]],['Imprévus 3 %',206,'#c9cfd8']],['7,1 k€','par mois']);
+donut('d_rev','l_rev',[['Abonnements (250 × 43 € moyen)',9406,C[0]],['Événements (4 × 300 €)',1200,C[1]],['Pass journée (150 × 5 €)',750,C[2]],['Salles de 6 à l\'heure',300,C[3]],['Adhésions',250,C[4]]],['11,9 k€','par mois']);
+donut('d_use','l_use',[['Réserve : 6 mois de charges',42951,C[2]],['Entrée et travaux',41510,C[0]],['Démarrage de la 1re année',15539,C[1]]],['100 k€','une seule fois']);
+document.getElementById('l_use').insertAdjacentHTML('beforeend','<div style="grid-template-columns:1fr;color:var(--muted);font-size:11px;margin-top:6px">Entrée et travaux : dépôt 9 006 € · loyers pendant les travaux 6 804 € · matériaux 8 500 € (lave-pieds, électricité, sol, éclairage) · cloisons mobiles et équipement événements 4 000 € · sécurité incendie et dossier ERP 3 500 € · mobilier 40 places 5 200 € · badges et caméras 2 500 € · lancement 2 000 €</div>');
 
+// zones
 (function(){const svg=document.getElementById('zones');
   const Z=['≤ 15 min','15-30 min','30-45 min'];
   const cases=[['Bas',[56,39,26],css('--c4')],['Central',[167,115,77],css('--c1')],['Haut',[452,311,209],css('--c5')]];
@@ -401,32 +420,84 @@ document.getElementById('l_use').insertAdjacentHTML('beforeend','<div style="gri
     c[1].forEach((v,j)=>{const y0=y(acc),y1=y(acc+v);h+=`<rect x="${x}" y="${y1}" width="${w}" height="${y0-y1}" fill="${c[2]}" opacity="${1-j*.28}" stroke="#fff"/>`;if(v>60)h+=`<text x="${x+w/2}" y="${(y0+y1)/2+4}" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="600">${Z[j]} : ${v}</text>`;acc+=v;});
     h+=`<text x="${x+w/2}" y="${y(acc)-7}" text-anchor="middle" font-size="13" font-weight="700" fill="${css('--navy')}">≈ ${acc}</text>`;
     h+=`<text x="${x+w/2}" y="${H-28}" text-anchor="middle" font-size="12.5" font-weight="600" fill="${css('--ink')}">${c[0]}</text>`;});
-  h+=`<line x1="${L}" x2="${W-R}" y1="${y(200)}" y2="${y(200)}" stroke="${css('--red')}" stroke-width="2" stroke-dasharray="6 4"/>`;
-  h+=`<line x1="${L}" x2="${W-R}" y1="${y(150)}" y2="${y(150)}" stroke="${css('--green')}" stroke-width="1.5" stroke-dasharray="3 3"/>`;
-  h+=`<text x="${L}" y="${H-8}" font-size="11" fill="${css('--muted')}">Abonnés potentiels empilés par zone · </text><text x="${L+205}" y="${H-8}" font-size="11" font-weight="700" fill="${css('--red')}">- - capacité ≈ 200</text><text x="${L+330}" y="${H-8}" font-size="11" font-weight="700" fill="${css('--green')}">- - objectif 150</text>`;
+  h+=`<line x1="${L}" x2="${W-R}" y1="${y(270)}" y2="${y(270)}" stroke="${css('--red')}" stroke-width="2" stroke-dasharray="6 4"/>`;
+  h+=`<line x1="${L}" x2="${W-R}" y1="${y(250)}" y2="${y(250)}" stroke="${css('--green')}" stroke-width="1.5" stroke-dasharray="3 3"/>`;
+  h+=`<text x="${L}" y="${H-8}" font-size="11" fill="${css('--muted')}">Abonnés potentiels empilés par zone · </text><text x="${L+205}" y="${H-8}" font-size="11" font-weight="700" fill="${css('--red')}">- - capacité ≈ 270</text><text x="${L+330}" y="${H-8}" font-size="11" font-weight="700" fill="${css('--green')}">- - objectif 250</text>`;
   svg.innerHTML=h;})();
 
+// plan à l'échelle : 1 m = 50 px, emprise 15 × 7 m
+(function(){const svg=document.getElementById('plan');const k=50,ox=30,oy=22;
+  const X=m=>ox+m*k,Y=m=>oy+m*k;const ink=css('--navy'),mut=css('--muted'),teal=css('--teal');let h='';
+  const rect=(x,y,w,hh,fill,stroke,extra='')=>`<rect x="${X(x)}" y="${Y(y)}" width="${w*k}" height="${hh*k}" fill="${fill}" stroke="${stroke}" ${extra}/>`;
+  const txt=(x,y,t,size=11,w=600,col=ink,anchor='middle')=>`<text x="${X(x)}" y="${Y(y)}" font-size="${size}" font-weight="${w}" fill="${col}" text-anchor="${anchor}">${t}</text>`;
+  // sol
+  h+=rect(0,0,15,7,'#fbfaf6','none');
+  // zone prière (pointillés) 7,4-11,0 × 0-4,0
+  h+=rect(7.4,0,3.6,4.0,css('--teal-l'),teal,'stroke-width="2" stroke-dasharray="2 4"');
+  for(let r=0;r<4;r++)for(let c=0;c<5;c++)h+=rect(7.65+c*0.68,0.35+r*0.95,0.55,0.8,'#cfe7e2','none','rx="2"');
+  h+=txt(9.2,3.75,'Espace de recueillement · 14 m² · 15-18 pers.',10.5,700,teal);
+  // salles amovibles (tirets)
+  [[0,0],[3.6,0]].forEach(([x0,y0],i)=>{h+=rect(x0+0.06,y0+0.06,3.48,3.2,'#eef2f8',ink,'stroke-width="2" stroke-dasharray="9 5"');
+    h+=rect(x0+0.85,y0+1.15,1.8,0.9,'#d9e0ec',ink,'stroke-width=".8"');
+    [[0.9,0.75],[1.75,0.75],[2.6,0.75],[0.9,2.4],[1.75,2.4],[2.6,2.4]].forEach(([cx,cy])=>h+=`<circle cx="${X(x0+cx-0.05)}" cy="${Y(y0+cy)}" r="${0.22*k}" fill="#fff" stroke="${mut}"/>`);
+    h+=txt(x0+1.8,y0+2.95,'Salle amovible '+(i?'B':'A')+' · 6 pl.',10.5,700);});
+  // tables 1,20 × 0,60 pour 2
+  const table=(x,y)=>{h+=rect(x,y,1.2,0.6,'#d9e0ec',ink,'stroke-width=".8"');[0.3,0.9].forEach(dx=>h+=`<circle cx="${X(x+dx)}" cy="${Y(y+0.85)}" r="${0.22*k}" fill="#fff" stroke="${mut}"/>`);};
+  [3.8,5.35].forEach(y=>{for(let i=0;i<5;i++)table(0.3+i*1.2,y);});
+  [4.4,5.85].forEach(y=>{for(let i=0;i<2;i++)table(8.2+i*1.2,y);});
+  h+=txt(3.3,6.75,'Étude ouverte · 20 places',10.5,700);h+=txt(9.4,4.25,'8 places',10,700,mut);
+  // sanitaires
+  h+=rect(13.3,0,1.7,2.2,'#f1f1ee',ink,'stroke-width="2"');
+  h+=rect(13.4,0.05,0.4,0.7,'#fff',ink);// cuvette
+  h+=rect(13.85,0.05,0.8,1.3,'url(#hatch)',mut,'stroke-dasharray="3 2"');
+  h+=`<circle cx="${X(14.15)}" cy="${Y(1.4)}" r="${0.75*k}" fill="none" stroke="${teal}" stroke-dasharray="4 3"/>`;
+  h+=txt(14.15,1.78,'WC accessible',9.5,700);h+=txt(14.15,1.98,'1,70 × 2,20',8.5,500,mut);
+  h+=rect(12.3,0,1.0,1.6,'#f1f1ee',ink,'stroke-width="2"');h+=rect(12.6,0.05,0.4,0.65,'#fff',ink);
+  h+=txt(12.8,1.25,'WC',9.5,700);h+=txt(12.8,1.45,'1,00 × 1,60',8.5,500,mut);
+  h+=rect(11.05,0,1.25,1.1,'#e3f1ef',teal,'stroke-width="1.5"');h+=rect(11.2,0.08,0.95,0.3,'#fff',teal);
+  h+=txt(11.67,0.72,'Lave-pieds',9,700,teal);h+=txt(11.67,0.92,'+ lavabo',8.5,500,mut);
+  // accueil, café
+  h+=rect(11.4,5.3,3.6,1.7,'#f5ecd9','#d8c38f');h+=rect(11.7,5.55,1.8,0.6,'#e8d6ae','#b8892b');
+  h+=txt(13.2,6.6,'Accueil, casiers, café',10.5,700,'#7a5a17');
+  h+=rect(14.4,2.6,0.55,2.2,'#f5ecd9','#d8c38f');h+=txt(14.67,4.95,'casiers',8.5,600,'#7a5a17');
+  // murs extérieurs et porte 1,40 m
+  h+=`<path d="M${X(6.6)},${Y(7)} L${X(0)},${Y(7)} L${X(0)},${Y(0)} L${X(15)},${Y(0)} L${X(15)},${Y(7)} L${X(8)},${Y(7)}" fill="none" stroke="${ink}" stroke-width="5"/>`;
+  h+=`<path d="M${X(6.6)},${Y(7)} A${1.4*k},${1.4*k} 0 0 1 ${X(8)},${Y(5.6)}" fill="none" stroke="${mut}" stroke-dasharray="3 3"/>`;
+  h+=txt(7.3,7.38,'Entrée 1,40 m',10,700);
+  // échelle
+  h+=`<g><rect x="${X(0)}" y="${Y(7.55)}" width="${5*k}" height="6" fill="${ink}"/>${[0,1,2,3,4,5].map(i=>`<text x="${X(i)}" y="${Y(7.55)+20}" font-size="9.5" text-anchor="middle" fill="${mut}">${i} m</text>`).join('')}</g>`;
+  // légende
+  h+=`<g font-size="10.5" fill="${ink}"><line x1="${X(9.3)}" x2="${X(10.1)}" y1="${Y(7.65)}" y2="${Y(7.65)}" stroke="${ink}" stroke-width="2" stroke-dasharray="9 5"/><text x="${X(10.2)}" y="${Y(7.65)+4}">cloison amovible</text><line x1="${X(12.4)}" x2="${X(13.2)}" y1="${Y(7.65)}" y2="${Y(7.65)}" stroke="${teal}" stroke-width="2" stroke-dasharray="2 4"/><text x="${X(13.3)}" y="${Y(7.65)+4}">limite au sol</text></g>`;
+  h+=`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="${teal}" stroke-width="1"/></pattern></defs>`;
+  svg.innerHTML=h;})();
+
+// prix
+function hbars(id,rows,mn,mx,step,fmt,L=250){const svg=document.getElementById(id);
+  const R=80,W=640,n=rows.length,rowH=Math.min(44,330/n),Hh=n*rowH+8,x=v=>L+(v-mn)/(mx-mn)*(W-L-R);let h='';
+  for(let t=mn;t<=mx;t+=step){h+=`<line x1="${x(t)}" x2="${x(t)}" y1="0" y2="${Hh}" stroke="${t===0?css('--navy'):css('--line')}" stroke-width="${t===0?1.5:1}"/><text x="${x(t)}" y="${Hh+18}" text-anchor="middle" font-size="11" fill="${css('--muted')}">${fmt.tick(t)}</text>`;}
+  rows.forEach((r,i)=>{const yy=6+i*rowH,v=r[1],x0=x(Math.max(mn,0)),x1=x(v),col=r[2]||(v>=0?css('--green'):css('--red'));
+    h+=`<text x="${L-10}" y="${yy+19}" text-anchor="end" font-size="12.5" fill="${css('--ink')}" font-weight="${r[3]?700:400}">${r[0]}</text>`;
+    h+=`<rect x="${Math.min(x0,x1)}" y="${yy+5}" width="${Math.max(1,Math.abs(x1-x0))}" height="22" rx="3" fill="${col}"/>`;
+    h+=`<text x="${(v>=0?x1:x0)+6}" y="${yy+21}" font-size="12" font-weight="700" fill="${col}">${fmt.val(v)}</text>`;});
+  svg.setAttribute('viewBox',`0 0 ${W} ${Hh+26}`);svg.innerHTML=h;}
+const eur={tick:t=>t+' €',val:v=>fr(v)+' €'};
+hbars('prices',[['Waqf Campus, boursier',29,css('--green'),1],['Waqf Campus',49,css('--green'),1],['Un café par jour (2,72 €)',82,css('--c4')],['Passe Navigo',91,css('--c4')],['La Permanence (dès)',99,css('--c4')]],0,120,20,{tick:t=>t+' €',val:v=>v===82?'≈ 82 €':fr(v)+' €'});
+hbars('ladder',[['Bénévoles + 2 services civiques',66,css('--green')],['1 coordinateur + volontaires',122,css('--green'),1],['1 salarié + étudiants 20 h/sem.',158,css('--gold')],['Salariés 91 h/sem.',224,css('--gold')]],0,300,50,{tick:t=>t,val:v=>v+' abonnés'});
+const sgn={tick:t=>t===0?'0':(t>0?'+':'−')+Math.abs(t/1000)+' k€',val:v=>(v>=0?'+':'−')+fr(Math.abs(v))+' €'};
+hbars('stress',[['Prévu : 250 abonnés',4823,null,1],['200 abonnés',2942],['150 abonnés',1060],['Aucun événement',3623],['Prix moyen de 35 € au lieu de 43 €',3073],['TVA appliquée sur le loyer',4205],['Soumis à TVA et impôt sur les sociétés',2413],['Sans coordinateur salarié',6914]],0,8000,2000,sgn);
+
+// mois
 (function(){const svg=document.getElementById('months');
   const M=['Avr.','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.','Janv.','Févr.','Mars','Année 2'];
-  const v=[-4448,-3911,-3374,-5212,-4983,-1763,-1226,-689,-152,386,923,1460,2745];
-  const top=4000,bot=-6000,L=70,R=20,T=16,B=40,W=1160,H=330,y=x=>T+(top-x)/(top-bot)*(H-T-B),bw=(W-L-R)/13;let h='';
+  const v=[-3108,-2265,-1422,-4537,-4207,1108,1951,2794,3637,4480,5324,6167,4823];
+  const top=8000,bot=-6000,L=70,R=20,T=16,B=40,W=1160,H=330,y=x=>T+(top-x)/(top-bot)*(H-T-B),bw=(W-L-R)/13;let h='';
   for(let t=bot;t<=top;t+=2000){h+=`<line x1="${L}" x2="${W-R}" y1="${y(t)}" y2="${y(t)}" stroke="${t===0?css('--navy'):css('--line')}" stroke-width="${t===0?1.5:1}"/><text x="${L-8}" y="${y(t)+4}" text-anchor="end" font-size="12" fill="${css('--muted')}">${t===0?'0':(t>0?'+':'−')+Math.abs(t/1000)+' k€'}</text>`;}
   v.forEach((x,i)=>{const bx=L+i*bw+bw*.2,w=bw*.6,y0=y(0),y1=y(x),last=i===12;
     h+=`<rect x="${bx}" y="${Math.min(y0,y1)}" width="${w}" height="${Math.max(1,Math.abs(y1-y0))}" rx="3" fill="${x>=0?css('--green'):css('--red')}" ${last?'stroke="'+css('--navy')+'" stroke-dasharray="4 3"':''}/>`;
     h+=`<text x="${bx+w/2}" y="${x>=0?y1-6:y1+15}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${x>=0?css('--green'):css('--red')}">${x>=0?'+':'−'}${fr(Math.abs(x))}</text>`;
     h+=`<text x="${bx+w/2}" y="${H-14}" text-anchor="middle" font-size="12" font-weight="${last?700:400}" fill="${last?css('--navy'):css('--muted')}">${M[i]}</text>`;});
+  h+=`<text x="${L+12*bw+bw/2}" y="${H-1}" text-anchor="middle" font-size="10" fill="${css('--muted')}">moyenne / mois</text>`;
   svg.innerHTML=h;})();
-
-function hbars(id,rows,mn,mx,step,unit,signed){const svg=document.getElementById(id);
-  const L=250,R=70,W=640,n=rows.length,rowH=Math.min(44,330/n),Hh=n*rowH+8,x=v=>L+(v-mn)/(mx-mn)*(W-L-R);let h='';
-  for(let t=mn;t<=mx;t+=step){h+=`<line x1="${x(t)}" x2="${x(t)}" y1="0" y2="${Hh}" stroke="${t===0?css('--navy'):css('--line')}" stroke-width="${t===0?1.5:1}"/><text x="${x(t)}" y="${Hh+18}" text-anchor="middle" font-size="11" fill="${css('--muted')}">${signed?(t===0?'0':(t>0?'+':'−')+Math.abs(t/1000)+' k€'):t}</text>`;}
-  rows.forEach((r,i)=>{const yy=6+i*rowH,v=r[1],x0=x(Math.max(mn,0)),x1=x(v),col=r[2]||(v>=0?css('--green'):css('--red'));
-    h+=`<text x="${L-10}" y="${yy+19}" text-anchor="end" font-size="12.5" fill="${css('--ink')}" font-weight="${r[3]?700:400}">${r[0]}</text>`;
-    h+=`<rect x="${Math.min(x0,x1)}" y="${yy+5}" width="${Math.max(1,Math.abs(x1-x0))}" height="22" rx="3" fill="${col}"/>`;
-    h+=`<text x="${v>=0?x1+6:x0+6}" y="${yy+21}" font-size="12" font-weight="700" fill="${col}">${signed?(v>=0?'+':'−')+fr(Math.abs(v))+' €':fr(v)+unit}</text>`;});
-  svg.setAttribute('viewBox',`0 0 ${W} ${Hh+26}`);svg.innerHTML=h;}
-hbars('ladder',[['Bénévoles + 2 services civiques',77,css('--green'),1],['1 salarié 35 h + bénévoles',126,css('--green')],['1 salarié + étudiants 20 h/sem.',162,css('--gold')],['Salariés 91 h/sem. (9h-22h 7j/7)',234,css('--red')]],0,300,50,' abonnés',false);
-hbars('stress',[['Prévu : 150 abonnés',2745,null,1],['120 abonnés',1616],['100 abonnés',864],['Pass journée divisés par 2',2120],['TVA appliquée sur le loyer',2127],['Prix moyen de 35 € au lieu de 43 €',1695],['Coordinateur salarié gardé',653],['Abonnement annuel, pas de creux d\'été',3551]],0,4000,1000,'',true);
 
 const slides=[...document.querySelectorAll('.slide')];
 const N=slides.length;
