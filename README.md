@@ -1,7 +1,8 @@
 # Waqf Campus · Tolbiac
 
-Présentation du projet en 6 slides : 100 m² près de Paris 1 Tolbiac pour prier, étudier et se retrouver, en waqf.
+Projet de lieu de 105 m² près de Paris 1 Tolbiac pour étudier, prier et se retrouver, en waqf.
 
-Slides : https://tw3-fr.github.io/waqf-campus-tolbiac/
-
-Résumé (2 pages) : https://tw3-fr.github.io/waqf-campus-tolbiac/resume.html
+- **Slides V2 (levée de fonds, 5 min, chiffres corrigés et sourcés)** : https://tw3-fr.github.io/waqf-campus-tolbiac/
+- **Audit financier sourcé + simulateur** : https://tw3-fr.github.io/waqf-campus-tolbiac/audit.html
+- Slides V1 (28/10/2026, chiffres non corrigés) : https://tw3-fr.github.io/waqf-campus-tolbiac/v1.html
+- Résumé V1 (2 pages, chiffres non corrigés) : https://tw3-fr.github.io/waqf-campus-tolbiac/resume.html
