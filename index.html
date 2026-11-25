@@ -86,6 +86,8 @@ table.calc{font-size:19px;background:none}table.calc td{padding:26px 10px;border
 table.calc td.op{font-family:Fraunces,serif;font-weight:700;color:var(--gold);font-size:20px;white-space:nowrap;width:80px}
 table.calc td.n{font-family:Fraunces,serif;font-weight:700;color:var(--navy);font-size:28px}
 table.calc tr:last-child td{border-bottom:none;background:var(--gold-l)}table.calc tr:last-child td.n{font-size:30px;color:var(--gold)}
+span.chip{font-size:12px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 10px}
+span.chip::before{content:"✓ ";color:var(--green);font-weight:800}
 ol.src{font-size:11.5px;line-height:1.5;columns:2;column-gap:36px;padding-left:20px}
 ol.src li{break-inside:avoid;margin-bottom:4px}
 ol.src a{color:var(--teal)}
@@ -116,7 +118,7 @@ body.read #ui{background:#1b2433}
     <div>
       <div class="kicker">Escale · premier lieu : place d'Italie, Paris 13e</div>
       <h1>Escale, une maison étudiante au rythme des prières</h1>
-      <p>105 m² au cœur du 13e. Un lieu de vie pour <b>étudier</b>, <b>prier à l'heure</b> sans quitter sa table, et <b>se retrouver</b>. Ce que vous donnez ce soir l'ouvre une fois pour toutes : il vit ensuite de ses services, et chaque excédent prépare le lieu suivant.</p>
+      <p>Un lieu ouvert à tous les étudiants, avec des salles d'étude, de cours et de colles, un espace de prière, un foyer pour souffler, et une salle qui accueille des conférences avec des acteurs de premier plan et des parcours d'exception. Un lieu où l'on révise ensemble, où l'on se retrouve, où l'on grandit.</p><p style="margin-top:10px;color:#e5c37a;font-weight:600">Le local est trouvé. Le plan est prêt. Il ne manque plus que vous.</p>
       <div class="ask"><span>100 k€ ce soir, une seule fois</span><span class="o">Ouverture au printemps 2027</span></div>
     </div>
     <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Institut TW3 · association loi 1901 · gala du 28 novembre 2026<br>Chiffres sourcés (annexe) · détail et simulateur : audit.html</div>
@@ -143,12 +145,9 @@ body.read #ui{background:#1b2433}
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="card navy"><div class="kpl">Notre objectif</div><div class="kpi">300 inscrits</div><div class="kpl" style="text-transform:none;font-size:14px">moins de 1 % de ces étudiants : 1 sur 140.</div></div>
-        <div class="card"><h3>Ce qui manque aujourd'hui</h3>
-          <ul class="b">
-            <li>Travailler tard <b>sans devoir partir pour prier</b>.</li>
-            <li>Un lieu calme, sans consommation obligatoire.</li>
-            <li>Une communauté pour réviser et se retrouver.</li>
-          </ul></div>
+        <div class="card gold"><h3>Aujourd'hui, ils doivent choisir</h3>
+          <div style="font-size:14.5px;line-height:1.55">Réviser à la bibliothèque, ou partir pour prier. Travailler seul dans sa chambre, ou payer un café pour s'asseoir. <b>Aucun lieu à Paris ne leur permet de faire les deux, ensemble.</b></div></div>
+        <div class="tk n">Escale leur offre ce lieu, à moins d'un café par jour.</div>
       </div>
     </div>
   </div>
@@ -157,13 +156,14 @@ body.read #ui{background:#1b2433}
 
 <!-- 3 LE LIEU -->
 <section class="slide">
-  <div class="sh"><div class="kicker">Le lieu</div>
-    <h2>Corvisart, 105 m² : <em>un seul espace</em> qui se transforme</h2></div>
+  <div class="sh"><div class="kicker">Le cas pratique : le local est trouvé</div>
+    <h2>Corvisart, place d'Italie : <em>105 m² prêts à accueillir</em></h2>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px"><span class="chip">Paris 13e, à 15 min de Tolbiac</span><span class="chip">Rez-de-chaussée</span><span class="chip">Accès PMR indépendant sur rue</span><span class="chip">Déjà ERP 5</span><span class="chip">2 sanitaires</span><span class="chip">Kitchenette</span><span class="chip">Disponible immédiatement</span><span class="chip">3 002 € HT/mois, bail 3/6/9</span></div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.32fr .68fr;flex:1">
       <div class="card" style="padding:10px 12px;display:flex;flex-direction:column"><h3>Au quotidien : étude et prière</h3><svg id="plan" viewBox="0 0 820 440" width="100%" style="margin:auto 0"></svg></div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card" style="flex:1;display:flex;flex-direction:column"><h3>En soirée : salle de conférence</h3><svg id="conf" viewBox="0 0 400 230" width="100%" style="margin:6px 0"></svg>
+        <div class="card" style="flex:1;display:flex;flex-direction:column"><h3>En soirée : conférences</h3><svg id="conf" viewBox="0 0 400 230" width="100%" style="margin:6px 0"></svg>
           <div style="font-size:13px">Cloisons repliées, bâche retirée : <b>un seul espace de 84 m²</b>, jusqu'à <b>60 personnes</b> assises.</div></div>
         <div class="card teal" style="font-size:13px"><b>L'espace de prière</b> : 15 m² délimités par une bâche amovible. Retirée, la zone redevient de l'étude.</div>
       </div>
@@ -234,7 +234,7 @@ body.read #ui{background:#1b2433}
         <tr><td>Horaires</td><td>9h-22h, 7j/7</td><td>24h/24, 7j/7</td></tr>
         <tr><td>Salle de groupe</td><td>2 salles de 6</td><td>1 salle de réunion</td></tr>
         <tr><td>Espace de prière</td><td><b>Oui, 15 m²</b></td><td>Non</td></tr>
-        <tr><td>Lieu de vie</td><td>Café, événements</td><td>Boissons, snacks</td></tr>
+        <tr><td>Lieu de vie</td><td>Café, foyer avec babyfoot, conférences</td><td>Boissons, snacks</td></tr>
       </table></div>
       <div class="card"><h3>Ce que coûte un mois</h3><svg id="prices" viewBox="0 0 640 220" width="100%"></svg></div>
     </div>
@@ -261,13 +261,13 @@ body.read #ui{background:#1b2433}
 <!-- 8 LA LEVEE -->
 <section class="slide">
   <div class="sh"><div class="kicker">La levée</div>
-    <h2>100 k€, une seule fois, pour <em>un lieu qui se finance ensuite tout seul</em></h2></div>
+    <h2>100 k€, une seule fois, pour <em>un lieu qui servira chaque génération</em></h2></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1fr 1fr;flex:1">
       <div class="card"><h3>Ce que financent vos 100 k€</h3><table class="big">
-        <tr><td>Entrée et travaux : dépôt, aménagement, sanitaires, mobilier, sécurité</td><td class="n">51,5 k€</td></tr>
-        <tr><td>Démarrage : les 5 premiers mois, le temps de remplir</td><td class="n">10 k€</td></tr>
-        <tr><td>Réserve de sécurité : plus de 4 mois de charges</td><td class="n">38,5 k€</td></tr>
+        <tr><td><b>Sécuriser la location</b> : dépôt de garantie, loyers pendant les travaux</td><td class="n">15,8 k€</td></tr>
+        <tr><td><b>Aménager</b> : salles, espace de prière, mobilier, sécurité, badges</td><td class="n">35,7 k€</td></tr>
+        <tr><td><b>Réserve</b> couvrant les premiers loyers, le temps de remplir</td><td class="n">48,5 k€</td></tr>
         <tr class="tot"><td>Total</td><td class="n">100 k€</td></tr>
       </table>
       <div class="tk" style="margin-top:18px">Ensuite, le lieu met ≈ 80 k€ de côté chaque année pour ouvrir le suivant.</div></div>
@@ -284,7 +284,22 @@ body.read #ui{background:#1b2433}
   <div class="sf"><span>L'espace de prière n'est pas financé par des dons défiscalisés</span><span class="pg"></span></div>
 </section>
 
-<!-- 9 SOURCES -->
+<!-- 9 PUZZLE -->
+<section class="slide cover">
+  <div class="l" style="flex:1.05">
+    <div>
+      <div class="kicker">Ce soir</div>
+      <h1>Il ne manque plus qu'une pièce</h1>
+      <p>Le besoin est là. Le local est trouvé, le plan est dessiné, le modèle tient sans aucun don après l'ouverture. Ce soir, la dernière pièce, c'est vous.</p>
+      <p style="margin-top:14px">Ensemble, donnons à ce projet les moyens d'ouvrir ses portes au printemps 2027, et à des générations d'étudiants un lieu qui leur ressemble.</p>
+      <div class="ask"><span>1 000 € = 340 € réels</span><span class="o">200 € = 68 € réels</span></div>
+    </div>
+    <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Escale · Institut TW3 · gala du 28 novembre 2026</div>
+  </div>
+  <div class="r" style="flex:.95;padding:40px"><svg id="puzzle" viewBox="0 0 420 440" width="100%"></svg></div>
+</section>
+
+<!-- 10 SOURCES -->
 <section class="slide" id="s">
   <div class="sh"><div class="kicker">Annexe</div><h2>Sources</h2></div>
   <div class="body">
@@ -345,10 +360,12 @@ function hbars(id,rows,mn,mx,step,fmt,L=250,W=640,rowMax=44){const svg=document.
   const box=(x,y,w,hh,fill,stroke)=>h+=`<rect x="${X(x)}" y="${Y(y)}" width="${w*k}" height="${hh*k}" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>`;
   // grand espace d'étude (fond commun, y compris sous la bâche)
   h+=`<path d="M${X(4)},${Y(0)} H${X(15)} V${Y(4.5)} H${X(10.5)} V${Y(7)} H${X(4)} Z" fill="#fbfaf6" stroke="#d9d3c4" stroke-width="1.5"/>`;
-  box(0,0,4,2.25,'#eef2f8','#b9c4d6');label(2,1.125,'Salle de travail A',9,'6 places');
-  box(0,2.25,4,2.25,'#eef2f8','#b9c4d6');label(2,3.375,'Salle de travail B',9,'6 places');
+  box(0,0,4,2.25,'#eef2f8','#b9c4d6');label(2,1.125,'Cours et colles A',9,'6 places');
+  box(0,2.25,4,2.25,'#eef2f8','#b9c4d6');label(2,3.375,'Cours et colles B',9,'6 places');
   box(0,4.5,4,2.5,'#f5ecd9','#d8c38f');label(2,5.75,'Accueil · café',10,'casiers','#7a5a17');
-  label(7.25,3.3,'Étude ouverte',51,'32 places');
+  label(7.25,3.0,'Étude ouverte',43,'32 places');
+  box(4,4.5,3,2.5,'#fbeee0','#e0b98a');label(5.5,5.6,'Le Foyer',8,'babyfoot · détente','#8a4b12',true);
+  h+=`<rect x="${X(4.75)}" y="${Y(4.85)}" width="${1.5*k}" height="${0.35*k}" rx="3" fill="#e0b98a" opacity=".7"/>`;
   // prière : 15 m² derrière une bâche amovible
   h+=`<rect x="${X(10.75)}" y="${Y(0.25)}" width="${4*k}" height="${3.75*k}" rx="6" fill="${css('--teal-l')}" stroke="${teal}" stroke-width="2.5" stroke-dasharray="8 6"/>`;
   label(12.75,1.95,'Espace de prière',15,'bâche amovible · sinon étude',teal);
@@ -392,6 +409,24 @@ hbars('prices',[['Escale, boursier',29,css('--green'),1],['Escale',54,css('--gre
     h+=`<text x="${bx+w/2}" y="${y(x)-8}" text-anchor="middle" font-size="15" font-weight="700" stroke="#fff" stroke-width="5" paint-order="stroke" fill="${ok?css('--green'):css('--teal')}">${x} %</text>`;
     h+=`<text x="${bx+w/2}" y="${H-22}" text-anchor="middle" font-size="13" fill="${css('--ink')}">${M[i]}</text>`;
     if(calm.includes(i))h+=`<text x="${bx+w/2}" y="${H-6}" text-anchor="middle" font-size="10.5" fill="${css('--muted')}">mois calme</text>`;});
+  svg.innerHTML=h;})();
+
+// puzzle
+(function(){const svg=document.getElementById('puzzle');const S=130,G=10,ox=10,oy=10;let h='';
+  const P=[['Le besoin','41 500 étudiants'],['Le local','105 m², trouvé'],['Le plan','44 places, prière'],['Le modèle','rentable en sept.'],['L\'équipe','Institut TW3'],['Le prix','54 € par mois'],['Vous','100 k€ ce soir']];
+  const piece=(x,y,r,b)=>{const k=18,m=S/2;let d=`M${x},${y} H${x+S}`;
+    d+=r?` V${y+m-k} a${k},${k} 0 1 1 0,${2*k} V${y+S}`:` V${y+S}`;
+    d+=b?` H${x+m+k} a${k},${k} 0 1 1 ${-2*k},0 H${x}`:` H${x}`;return d+' Z';};
+  P.slice(0,6).concat([P[6]]).forEach((p,i)=>{if(i>8)return;});
+  const cells=[[0,0],[1,0],[2,0],[0,1],[1,1],[2,1],[0,2],[1,2],[2,2]];
+  const labels=[['Le besoin','41 500 étudiants'],['Le local','105 m², trouvé'],['Le plan','44 places'],['Le modèle','rentable en sept.'],['Le prix','54 € par mois'],['L\'équipe','Institut TW3'],['Les soirées','60 places'],['Le calendrier','printemps 2027'],['Vous','100 k€ ce soir']];
+  cells.forEach(([c,r],i)=>{const x=ox+c*(S+G),y=oy+r*(S+G),last=i===8,lab=labels[i];
+    const right=c<2,bottom=r<2;
+    if(last){h+=`<path d="${piece(x,y,false,false)}" fill="rgba(229,195,122,.12)" stroke="#e5c37a" stroke-width="3" stroke-dasharray="9 7"/>`;
+      h+=`<text x="${x+S/2}" y="${y+S/2-6}" text-anchor="middle" font-size="22" font-weight="700" fill="#e5c37a" font-family="Fraunces,serif">${lab[0]}</text><text x="${x+S/2}" y="${y+S/2+18}" text-anchor="middle" font-size="13" font-weight="600" fill="#e5c37a">${lab[1]}</text>`;return;}
+    h+=`<path d="${piece(x,y,right,bottom)}" fill="${lab?'#1E3A64':'#24426f'}" stroke="#0b1830" stroke-width="2"/>`;
+    if(lab){h+=`<text x="${x+S/2}" y="${y+S/2-4}" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">✓ ${lab[0]}</text><text x="${x+S/2}" y="${y+S/2+18}" text-anchor="middle" font-size="12" fill="#c8d3e6">${lab[1]}</text>`;}
+    else h+=`<text x="${x+S/2}" y="${y+S/2+6}" text-anchor="middle" font-size="22" fill="#e5c37a">✓</text>`;});
   svg.innerHTML=h;})();
 
 const slides=[...document.querySelectorAll('.slide')];
