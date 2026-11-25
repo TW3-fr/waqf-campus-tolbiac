@@ -90,6 +90,7 @@ span.chip{font-size:12px;font-weight:600;color:var(--navy);background:#fff;borde
 span.chip::before{content:"✓ ";color:var(--green);font-weight:800}
 table.det{font-size:14px}table.det td{padding:5px 12px}table.det td:first-child{padding-left:26px}
 table.det tr.grp td{background:var(--gold-l);font-weight:700;color:var(--navy);padding:7px 12px;font-size:14.5px}
+i.dot{display:inline-block;width:12px;height:12px;border-radius:3px}
 ol.src{font-size:11.5px;line-height:1.5;columns:2;column-gap:36px;padding-left:20px}
 ol.src li{break-inside:avoid;margin-bottom:4px}
 ol.src a{color:var(--teal)}
@@ -126,7 +127,7 @@ body.read #ui{background:#1b2433}
     <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Institut TW3 · association loi 1901 · gala du 28 novembre 2026<br>Chiffres sourcés (annexe) · détail et simulateur : audit.html</div>
   </div>
   <div class="r">
-    <div><b>44 places</b><span>de 9h à 22h, 7 jours sur 7</span></div>
+    <div><b>60 places</b><span>de 9h à 22h, 7 jours sur 7</span></div>
     <div><b>29 €</b><span>par mois, tarif unique : moins d'1 € par jour</span></div>
     <div><b>Autonome</b><span>dès sa première année : le lieu paie ses charges sans aucun don</span></div>
   </div>
@@ -165,7 +166,7 @@ body.read #ui{background:#1b2433}
     <div class="grid" style="grid-template-columns:1.32fr .68fr;flex:1">
       <div class="card" style="padding:10px 12px;display:flex;flex-direction:column"><h3>Au quotidien : étude et prière</h3><svg id="plan" viewBox="0 0 820 440" width="100%" style="margin:auto 0"></svg></div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card" style="flex:1;display:flex;flex-direction:column"><h3>En soirée : conférences</h3><svg id="conf" viewBox="0 0 400 230" width="100%" style="margin:6px 0"></svg>
+        <div class="card" style="flex:1;display:flex;flex-direction:column"><h3>Le soir : événements et conférences</h3><svg id="conf" viewBox="0 0 400 230" width="100%" style="margin:6px 0"></svg>
           <div style="font-size:13px">Cloisons repliées, bâche retirée : <b>un seul espace de 84 m²</b>, jusqu'à <b>60 personnes</b> assises.</div></div>
         <div class="card teal" style="font-size:13px"><b>L'espace de prière</b> : 15 m² délimités par une bâche amovible. Retirée, la zone redevient de l'étude.</div>
       </div>
@@ -192,7 +193,7 @@ body.read #ui{background:#1b2433}
       </table></div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="card navy"><div class="kpl">Le plus économe</div><div class="kpi">Salariés + badges</div><div class="kpl" style="text-transform:none;font-size:14px">En journée, un salarié accueille : à temps plein en semaine, à temps partiel le week-end. Le soir, les inscrits entrent avec leur badge, sous télésurveillance.</div></div>
-        <div class="card"><div class="kpl">Par place et par jour</div><div class="kpi">6 €</div><div class="note">8 278 € ÷ 44 places ÷ 30 jours</div></div>
+        <div class="card"><div class="kpl">Par place et par jour</div><div class="kpi">4,60 €</div><div class="note">8 278 € ÷ 60 places ÷ 30 jours</div></div>
       </div>
     </div>
   </div>
@@ -201,22 +202,26 @@ body.read #ui{background:#1b2433}
 
 <!-- 5 REVENUS -->
 <section class="slide">
-  <div class="sh"><div class="kicker">Les revenus</div>
-    <h2>Uniquement nos services : <em>équilibre à ≈ 245 inscrits</em></h2></div>
+  <div class="sh"><div class="kicker">Le modèle économique</div>
+    <h2>Un lieu qui vit de ses services, <em>pas de dons</em></h2></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.3fr .7fr;flex:1">
-      <div class="card"><table class="big">
-        <tr><th>Service</th><th class="n">Volume</th><th class="n">Prix</th><th class="n">€ / mois</th></tr>
-        <tr><td>Pass étudiant, tarif unique</td><td class="n">300</td><td class="n">29 €</td><td class="n">8 700</td></tr>
-        <tr><td>Soirées privatisées<a class="r" href="#s">10</a></td><td class="n">4</td><td class="n">300 €</td><td class="n">1 200</td></tr>
-        <tr><td>Pass journée</td><td class="n">150</td><td class="n">5 €</td><td class="n">750</td></tr>
-        <tr><td>Salles de 6, à l'heure</td><td class="n">30 h</td><td class="n">10 €</td><td class="n">300</td></tr>
-        <tr class="tot"><td>Mois plein</td><td></td><td></td><td class="n">10 950</td></tr>
-        <tr><td><b>Moyenne sur l'année</b>, 4 mois calmes à −20 %<a class="r" href="#s">17</a></td><td></td><td></td><td class="n"><b>10 220</b></td></tr>
-      </table></div>
+      <div class="card" style="display:flex;flex-direction:column;gap:12px">
+        <h3>Chaque mois, nos recettes dépassent nos charges</h3>
+        <svg id="rc" viewBox="0 0 720 150" width="100%"></svg>
+        <table class="big">
+          <tr><th></th><th>Service</th><th class="n">Volume</th><th class="n">Prix</th><th class="n">€ / mois</th></tr>
+          <tr><td><i class="dot" style="background:var(--c1)"></i></td><td>Pass étudiant, tarif unique</td><td class="n">300</td><td class="n">29 €</td><td class="n">8 700</td></tr>
+          <tr><td><i class="dot" style="background:var(--c2)"></i></td><td>Événements et conférences<a class="r" href="#s">10</a></td><td class="n">4</td><td class="n">300 €</td><td class="n">1 200</td></tr>
+          <tr><td><i class="dot" style="background:var(--c3)"></i></td><td>Pass journée</td><td class="n">150</td><td class="n">5 €</td><td class="n">750</td></tr>
+          <tr><td><i class="dot" style="background:var(--c4)"></i></td><td>Salles de 6, à l'heure</td><td class="n">30 h</td><td class="n">10 €</td><td class="n">300</td></tr>
+        </table>
+        <div class="note">Moyenne sur l'année : 10 220 €/mois, avec 4 mois calmes à −20 %<a class="r" href="#s">17</a>.</div>
+      </div>
       <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="card navy"><div class="kpl">Une fois tout payé, il reste</div><div class="kpi">+1,9 k€/mois</div><div class="kpl" style="text-transform:none;font-size:14px">10 220 € de recettes − 8 278 € de charges. Ce n'est pas un besoin : c'est la marge, mise de côté (≈ 23 k€ par an) pour ouvrir un 2e lieu sans redemander de dons.</div></div>
-        <div class="card"><div class="kpl">À l'équilibre</div><div class="kpi">≈ 245 inscrits</div><div class="note">sur 300 visés ; capacité ≈ 300 inscrits (44 places, 91 h, 60 % d'occupation<a class="r" href="#s">19</a>)</div></div>
+        <div class="card green" style="text-align:center;padding:20px 16px"><div class="kpl" style="color:var(--green)">Dons nécessaires après l'ouverture</div><div class="kpi" style="font-size:64px;color:var(--green)">0 €</div><div style="font-size:14px;color:#0d5c2c;font-weight:600">100 % des recettes viennent de nos services</div></div>
+        <div class="card navy"><div class="kpl">Une fois tout payé, il reste</div><div class="kpi">+1,9 k€/mois</div></div>
+        <div class="card"><div class="kpl">À l'équilibre</div><div class="kpi">≈ 245 inscrits</div><div class="note">sur 300 visés, pour 60 places</div></div>
       </div>
     </div>
   </div>
@@ -272,7 +277,7 @@ body.read #ui{background:#1b2433}
         <tr><td>Loyers pendant les travaux, avant l'ouverture</td><td class="n">6 804 €</td></tr>
         <tr class="grp"><td>2. Aménager le lieu</td><td class="n">35 700 €</td></tr>
         <tr><td>Travaux : sol, électricité, éclairage, sanitaires</td><td class="n">18 500 €</td></tr>
-        <tr><td>Mobilier pour 44 places, foyer et babyfoot</td><td class="n">5 200 €</td></tr>
+        <tr><td>Mobilier pour 60 places, foyer et babyfoot</td><td class="n">5 200 €</td></tr>
         <tr><td>Cloisons mobiles, bâche, sono pour les conférences</td><td class="n">4 000 €</td></tr>
         <tr><td>Sécurité incendie et dossier d'ouverture au public</td><td class="n">3 500 €</td></tr>
         <tr><td>Badges d'accès et caméras</td><td class="n">2 500 €</td></tr>
@@ -304,6 +309,7 @@ body.read #ui{background:#1b2433}
       <p>Le besoin est là. Le local est trouvé, le plan est dessiné, le modèle tient sans aucun don après l'ouverture. Ce soir, la dernière pièce, c'est vous.</p>
       <p style="margin-top:14px">Ensemble, donnons à ce projet les moyens d'ouvrir ses portes au printemps 2027, et à des générations d'étudiants un lieu qui leur ressemble.</p>
       <div class="ask"><span>1 000 € = 340 € réels</span><span class="o">200 € = 68 € réels</span></div>
+      <p style="margin-top:22px;border-left:3px solid #e5c37a;padding-left:14px"><b style="color:#e5c37a">Horizon 2028</b> : les excédents d'Escale financent un 2e lieu, sans nouvel appel aux dons.</p>
     </div>
     <div style="font-size:12px;color:#c8d3e6;line-height:1.6">Escale · Institut TW3 · gala du 28 novembre 2026</div>
   </div>
@@ -374,7 +380,7 @@ function hbars(id,rows,mn,mx,step,fmt,L=250,W=640,rowMax=44){const svg=document.
   box(0,0,4,2.25,'#eef2f8','#b9c4d6');label(2,1.125,'Cours et colles A',9,'6 places');
   box(0,2.25,4,2.25,'#eef2f8','#b9c4d6');label(2,3.375,'Cours et colles B',9,'6 places');
   box(0,4.5,4,2.5,'#f5ecd9','#d8c38f');label(2,5.75,'Accueil · café',10,'casiers','#7a5a17');
-  label(7.25,3.0,'Étude ouverte',43,'32 places');
+  label(7.25,3.0,'Étude ouverte',43,'48 places');
   box(4,4.5,3,2.5,'#fbeee0','#e0b98a');label(5.5,5.6,'Le Foyer',8,'babyfoot · détente','#8a4b12',true);
   h+=`<rect x="${X(4.75)}" y="${Y(4.85)}" width="${1.5*k}" height="${0.35*k}" rx="3" fill="#e0b98a" opacity=".7"/>`;
   // prière : 15 m² derrière une bâche amovible
@@ -422,15 +428,28 @@ hbars('prices',[['Escale',29,css('--green'),1],['Un café par jour (2,72 €)',8
     if(calm.includes(i))h+=`<text x="${bx+w/2}" y="${H-6}" text-anchor="middle" font-size="10.5" fill="${css('--muted')}">mois calme</text>`;});
   svg.innerHTML=h;})();
 
+// recettes vs charges
+(function(){const svg=document.getElementById('rc');const L=110,W=720,R=90,mx=11000,x=v=>L+v/mx*(W-L-R);let h='';
+  const seg=[[8120,css('--c1')],[1120,css('--c2')],[700,css('--c3')],[280,css('--c4')]];let a=0;
+  h+=`<text x="${L-10}" y="44" text-anchor="end" font-size="14" font-weight="700" fill="${css('--green')}">Recettes</text>`;
+  seg.forEach(([v,c])=>{h+=`<rect x="${x(a)}" y="22" width="${x(a+v)-x(a)}" height="34" fill="${c}"/>`;a+=v;});
+  h+=`<text x="${x(a)+8}" y="45" font-size="15" font-weight="700" fill="${css('--green')}">10 220 €</text>`;
+  h+=`<text x="${L-10}" y="104" text-anchor="end" font-size="14" font-weight="700" fill="${css('--muted')}">Charges</text>`;
+  h+=`<rect x="${x(0)}" y="82" width="${x(8278)-x(0)}" height="34" fill="#c9cfd8"/><text x="${x(8278)+8}" y="105" font-size="15" font-weight="700" fill="${css('--muted')}">8 278 €</text>`;
+  h+=`<line x1="${x(8278)}" x2="${x(8278)}" y1="14" y2="124" stroke="${css('--navy')}" stroke-dasharray="4 3"/>`;
+  h+=`<rect x="${x(8278)}" y="22" width="${x(10220)-x(8278)}" height="34" fill="none" stroke="${css('--green')}" stroke-width="3"/>`;
+  h+=`<text x="${(x(8278)+x(10220))/2}" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="${css('--green')}">+1 942 € de marge</text>`;
+  svg.innerHTML=h;})();
+
 // puzzle
 (function(){const svg=document.getElementById('puzzle');const S=130,G=10,ox=10,oy=10;let h='';
-  const P=[['Le besoin','41 500 étudiants'],['Le local','105 m², trouvé'],['Le plan','44 places, prière'],['Le modèle','équilibre en nov.'],['L\'équipe','Institut TW3'],['Le prix','29 € par mois'],['Vous','100 k€ ce soir']];
+  const P=[['Le besoin','41 500 étudiants'],['Le local','105 m², trouvé'],['Le plan','60 places, prière'],['Le modèle','équilibre en nov.'],['L\'équipe','Institut TW3'],['Le prix','29 € par mois'],['Vous','100 k€ ce soir']];
   const piece=(x,y,r,b)=>{const k=18,m=S/2;let d=`M${x},${y} H${x+S}`;
     d+=r?` V${y+m-k} a${k},${k} 0 1 1 0,${2*k} V${y+S}`:` V${y+S}`;
     d+=b?` H${x+m+k} a${k},${k} 0 1 1 ${-2*k},0 H${x}`:` H${x}`;return d+' Z';};
   P.slice(0,6).concat([P[6]]).forEach((p,i)=>{if(i>8)return;});
   const cells=[[0,0],[1,0],[2,0],[0,1],[1,1],[2,1],[0,2],[1,2],[2,2]];
-  const labels=[['Le besoin','41 500 étudiants'],['Le local','105 m², trouvé'],['Le plan','44 places'],['Le modèle','équilibre en nov.'],['Le prix','29 € par mois'],['L\'équipe','Institut TW3'],['Les soirées','60 places'],['Le calendrier','printemps 2027'],['Vous','100 k€ ce soir']];
+  const labels=[['Le besoin','41 500 étudiants'],['Le local','105 m², trouvé'],['Le plan','60 places'],['Le modèle','équilibre en nov.'],['Le prix','29 € par mois'],['L\'équipe','Institut TW3'],['Événements','60 personnes'],['Le calendrier','printemps 2027'],['Vous','100 k€ ce soir']];
   cells.forEach(([c,r],i)=>{const x=ox+c*(S+G),y=oy+r*(S+G),last=i===8,lab=labels[i];
     const right=c<2,bottom=r<2;
     if(last){h+=`<path d="${piece(x,y,false,false)}" fill="rgba(229,195,122,.12)" stroke="#e5c37a" stroke-width="3" stroke-dasharray="9 7"/>`;
