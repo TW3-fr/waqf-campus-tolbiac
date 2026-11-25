@@ -82,10 +82,10 @@ svg text{font-family:Inter,sans-serif}
 .plan small{font-weight:500;color:var(--muted);font-size:10px}
 /* sources */
 table.big{font-size:17px}table.big td{padding:15px 14px}table.big th{padding:8px 12px;font-size:12.5px}
-table.calc{font-size:19px;background:none}table.calc td{padding:26px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.calc{font-size:17px;background:none}table.calc td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
 table.calc td.op{font-family:Fraunces,serif;font-weight:700;color:var(--gold);font-size:20px;white-space:nowrap;width:80px}
-table.calc td.n{font-family:Fraunces,serif;font-weight:700;color:var(--navy);font-size:28px}
-table.calc tr:last-child td{border-bottom:none;background:var(--gold-l)}table.calc tr:last-child td.n{font-size:30px;color:var(--gold)}
+table.calc td.n{font-family:Fraunces,serif;font-weight:700;color:var(--navy);font-size:24px}
+table.calc tr:last-child td{border-bottom:none;background:var(--gold-l)}table.calc tr:last-child td.n{font-size:28px;color:var(--gold)}
 span.chip{font-size:12px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 10px}
 span.chip::before{content:"✓ ";color:var(--green);font-weight:800}
 table.det{font-size:14px}table.det td{padding:5px 12px}table.det td:first-child{padding-left:26px}
@@ -145,6 +145,8 @@ body.read #ui{background:#1b2433}
           <tr><td class="op">× 50 %</td><td>étudient à Paris (Apur)<a class="r" href="#s">6</a></td><td class="n">≈ 415 000</td></tr>
           <tr><td class="op">× 10 %</td><td>de musulmans chez les 18-59 ans (Insee, TeO2)<a class="r" href="#s">7</a></td><td class="n">≈ 41 500</td></tr>
         </table>
+        <h3 style="margin-top:14px">Étudiants pour une place de travail<a class="r" href="#s">20</a> <span class="note" style="font-weight:400">(moins, c'est mieux)</span></h3>
+        <svg id="ratio" viewBox="0 0 640 200" width="100%"></svg>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="card navy"><div class="kpl">Notre objectif</div><div class="kpi">300 inscrits</div><div class="kpl" style="text-transform:none;font-size:14px">moins de 1 % de ces étudiants : 1 sur 140.</div></div>
@@ -340,6 +342,7 @@ body.read #ui{background:#1b2433}
       <li>Coworking : juillet-août et décembre-janvier, −10 à −15 points d'occupation : <a href="https://modelesdebusinessplan.com/blogs/infos/ouvrir-coworking-revenu-profits">modelesdebusinessplan.com</a></li>
       <li>Occupation des bureaux, juillet ≈ −20 % par rapport à juin (2022-2024) : <a href="https://www.afreespace.com/blog/is-your-wfo-mandate-ready-for-the-september-peak/">Freespace</a></li>
       <li>Occupation saine d'un espace partagé, 50-75 % : <a href="https://www.officernd.com/blog/occupancy-rates-guide/">OfficeRnD</a></li>
+      <li>Places en bibliothèque universitaire : 1 pour 14 étudiants à Paris intra-muros, 1 pour 12 en France, objectif 1 pour 10, 1 pour 6 au Royaume-Uni et aux États-Unis : <a href="https://www.culture.gouv.fr/content/download/251453/pdf_file/20180504_MC_MESR-Dossier-biblioth%C3%A8ques-universitaires.pdf">ministères de la Culture et de l'Enseignement supérieur, 2018</a></li>
     </ol>
   </div>
   <div class="sf"><span>Escale · V3 · 25/11/2026</span><span class="pg"></span></div>
@@ -427,6 +430,9 @@ hbars('prices',[['Escale',29,css('--green'),1],['Un café par jour (2,72 €)',8
     h+=`<text x="${bx+w/2}" y="${H-22}" text-anchor="middle" font-size="13" fill="${css('--ink')}">${M[i]}</text>`;
     if(calm.includes(i))h+=`<text x="${bx+w/2}" y="${H-6}" text-anchor="middle" font-size="10.5" fill="${css('--muted')}">mois calme</text>`;});
   svg.innerHTML=h;})();
+
+// ratio places
+hbars('ratio',[['BU à Paris intra-muros',14,css('--red')],['BU en France',12,css('--c4')],['Objectif de l\'État',10,css('--c4')],['Royaume-Uni, États-Unis',6,css('--c4')],['Escale : 60 places, 300 inscrits',5,css('--green'),1]],0,16,2,{tick:t=>t,val:v=>'1 place pour '+v},230,640,34);
 
 // recettes vs charges
 (function(){const svg=document.getElementById('rc');const L=110,W=720,R=90,mx=11000,x=v=>L+v/mx*(W-L-R);let h='';
